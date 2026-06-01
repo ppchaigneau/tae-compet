@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dragon Cup Taekwondo Championship 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">🥋 Dragon Cup 2026</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#register" class="btn-nav">Register Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Official Registration Open</p>
+      <h1>Dragon Cup<br/>Taekwondo Championship</h1>
+      <p class="hero-sub">July 19–20, 2026 &nbsp;·&nbsp; Paris Convention Center</p>
+      <div class="hero-actions">
+        <a href="#register" class="btn-primary">Register Now</a>
+        <a href="#schedule" class="btn-outline">View Schedule</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-circle">
+        <span class="badge-num">2026</span>
+        <span class="badge-label">Championship</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Athletes</span></div>
+    <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Countries</span></div>
+    <div class="stat"><span class="stat-num">12</span><span class="stat-label">Weight Classes</span></div>
+    <div class="stat"><span class="stat-num">€5K</span><span class="stat-label">Prize Pool</span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About the Tournament</h2>
+      <p class="section-text">
+        The Dragon Cup is an open international Taekwondo competition welcoming athletes of all belt levels,
+        from white belt beginners to black belt masters. Sanctioned by the World Taekwondo Federation,
+        this two-day event features Kyorugi (sparring) and Poomsae (forms) divisions across all age groups.
+      </p>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Venue</h3>
+          <p>Paris Convention Center<br/>Hall B, 75015 Paris</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📅</div>
+          <h3>Dates</h3>
+          <p>July 19 (Poomsae)<br/>July 20 (Kyorugi)</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">⏰</div>
+          <h3>Registration Closes</h3>
+          <p>June 30, 2026<br/>23:59 CET</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">💶</div>
+          <h3>Entry Fee</h3>
+          <p>€40 per division<br/>€65 for both</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Event Schedule</h2>
+      <div class="schedule-grid">
+        <div class="schedule-day">
+          <div class="day-header">Day 1 — July 19</div>
+          <ul class="schedule-list">
+            <li><span class="time">08:00</span> Doors open &amp; weigh-in</li>
+            <li><span class="time">09:00</span> Opening ceremony</li>
+            <li><span class="time">09:30</span> Poomsae – Juniors (Under 14)</li>
+            <li><span class="time">11:00</span> Poomsae – Cadets (14–17)</li>
+            <li><span class="time">13:00</span> Lunch break</li>
+            <li><span class="time">14:00</span> Poomsae – Adults (18+)</li>
+            <li><span class="time">17:00</span> Poomsae medal ceremony</li>
+            <li><span class="time">18:00</span> End of day 1</li>
+          </ul>
+        </div>
+        <div class="schedule-day">
+          <div class="day-header">Day 2 — July 20</div>
+          <ul class="schedule-list">
+            <li><span class="time">08:00</span> Doors open &amp; weigh-in</li>
+            <li><span class="time">09:00</span> Kyorugi – Junior divisions</li>
+            <li><span class="time">11:30</span> Kyorugi – Cadet divisions</li>
+            <li><span class="time">13:00</span> Lunch break</li>
+            <li><span class="time">14:00</span> Kyorugi – Adult divisions</li>
+            <li><span class="time">16:30</span> Semi-finals &amp; finals</li>
+            <li><span class="time">18:00</span> Closing ceremony</li>
+            <li><span class="time">18:30</span> End of tournament</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="section">
+    <div class="container">
+      <h2 class="section-title">Weight &amp; Age Categories</h2>
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-tab="junior">Junior (Under 14)</button>
+        <button class="cat-tab" data-tab="cadet">Cadet (14–17)</button>
+        <button class="cat-tab" data-tab="adult">Adult (18+)</button>
+      </div>
+      <div id="junior" class="cat-content active">
+        <table class="cat-table">
+          <thead><tr><th>Division</th><th>Weight</th><th>Gender</th></tr></thead>
+          <tbody>
+            <tr><td>Fin</td><td>Under 33 kg</td><td>Male / Female</td></tr>
+            <tr><td>Fly</td><td>33–37 kg</td><td>Male / Female</td></tr>
+            <tr><td>Bantam</td><td>37–41 kg</td><td>Male / Female</td></tr>
+            <tr><td>Feather</td><td>41–45 kg</td><td>Male / Female</td></tr>
+            <tr><td>Light</td><td>45–49 kg</td><td>Male / Female</td></tr>
+            <tr><td>Heavy</td><td>Over 49 kg</td><td>Male / Female</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="cadet" class="cat-content">
+        <table class="cat-table">
+          <thead><tr><th>Division</th><th>Weight</th><th>Gender</th></tr></thead>
+          <tbody>
+            <tr><td>Fin</td><td>Under 45 kg</td><td>Male / Female</td></tr>
+            <tr><td>Fly</td><td>45–51 kg</td><td>Male / Female</td></tr>
+            <tr><td>Bantam</td><td>51–55 kg</td><td>Male / Female</td></tr>
+            <tr><td>Feather</td><td>55–59 kg</td><td>Male / Female</td></tr>
+            <tr><td>Light</td><td>59–63 kg</td><td>Male / Female</td></tr>
+            <tr><td>Heavy</td><td>Over 63 kg</td><td>Male / Female</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="adult" class="cat-content">
+        <table class="cat-table">
+          <thead><tr><th>Division</th><th>Weight</th><th>Gender</th></tr></thead>
+          <tbody>
+            <tr><td>Fin</td><td>Under 54 kg</td><td>Male / Female</td></tr>
+            <tr><td>Fly</td><td>54–58 kg</td><td>Male / Female</td></tr>
+            <tr><td>Bantam</td><td>58–63 kg</td><td>Male / Female</td></tr>
+            <tr><td>Feather</td><td>63–68 kg</td><td>Male / Female</td></tr>
+            <tr><td>Light</td><td>68–74 kg</td><td>Male / Female</td></tr>
+            <tr><td>Welter</td><td>74–80 kg</td><td>Male / Female</td></tr>
+            <tr><td>Middle</td><td>80–87 kg</td><td>Male / Female</td></tr>
+            <tr><td>Heavy</td><td>Over 87 kg</td><td>Male / Female</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section id="register" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Registration Form</h2>
+      <p class="section-text">Complete the form below to register for the Dragon Cup 2026. All fields are required unless marked optional.</p>
+      <form id="regForm" class="reg-form" novalidate>
+
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Jean" required />
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Dupont" required />
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="dob">Date of Birth *</label>
+              <input type="date" id="dob" name="dob" required />
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender *</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select…</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="jean@example.com" required />
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" required />
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full">
+              <label for="nationality">Nationality *</label>
+              <input type="text" id="nationality" name="nationality" placeholder="French" required />
+              <span class="error-msg"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Club &amp; Belt Information</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="club">Club / Dojang Name *</label>
+              <input type="text" id="club" name="club" placeholder="Dragon Dojang Paris" required />
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group">
+              <label for="coach">Coach / Instructor Name *</label>
+              <input type="text" id="coach" name="coach" placeholder="Master Kim" required />
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="belt">Belt Grade *</label>
+              <select id="belt" name="belt" required>
+                <option value="">Select…</option>
+                <optgroup label="Color Belts">
+                  <option value="white">White</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="orange">Orange</option>
+                  <option value="green">Green</option>
+                  <option value="blue">Blue</option>
+                  <option value="red">Red</option>
+                  <option value="brown">Brown</option>
+                </optgroup>
+                <optgroup label="Black Belts">
+                  <option value="1dan">1st Dan</option>
+                  <option value="2dan">2nd Dan</option>
+                  <option value="3dan">3rd Dan</option>
+                  <option value="4dan+">4th Dan and above</option>
+                </optgroup>
+              </select>
+              <span class="error-msg"></span>
+            </div>
+            <div class="form-group">
+              <label for="weight">Current Weight (kg) *</label>
+              <input type="number" id="weight" name="weight" min="20" max="200" step="0.1" placeholder="65.5" required />
+              <span class="error-msg"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Competition Divisions</legend>
+          <p class="fieldset-note">Select the event(s) you wish to enter.</p>
+          <div class="form-row">
+            <div class="form-group full">
+              <label>Events *</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="kyorugi" />
+                  <span>Kyorugi (Sparring) — €40</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="events" value="poomsae" />
+                  <span>Poomsae (Forms) — €40</span>
+                </label>
+              </div>
+              <span class="error-msg" id="eventsError"></span>
+            </div>
+          </div>
+          <div class="form-row" id="weightClassRow" style="display:none">
+            <div class="form-group full">
+              <label for="weightClass">Weight Class (Kyorugi) *</label>
+              <select id="weightClass" name="weightClass">
+                <option value="">Select weight class…</option>
+                <option value="fin">Fin</option>
+                <option value="fly">Fly</option>
+                <option value="bantam">Bantam</option>
+                <option value="feather">Feather</option>
+                <option value="light">Light</option>
+                <option value="welter">Welter</option>
+                <option value="middle">Middle</option>
+                <option value="heavy">Heavy</option>
+              </select>
+              <span class="error-msg"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Medical &amp; Consent</legend>
+          <div class="form-row">
+            <div class="form-group full">
+              <label for="medical">Medical Conditions / Injuries (optional)</label>
+              <textarea id="medical" name="medical" rows="3" placeholder="List any relevant medical conditions or injuries organizers should be aware of…"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full">
+              <label class="checkbox-label">
+                <input type="checkbox" id="consent" name="consent" required />
+                <span>I confirm that I am medically fit to compete and I accept the tournament rules and liability waiver. *</span>
+              </label>
+              <span class="error-msg" id="consentError"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full">
+              <label class="checkbox-label">
+                <input type="checkbox" id="photoConsent" name="photoConsent" />
+                <span>I consent to photos/videos taken at the event being used for promotional purposes. (optional)</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Fee summary -->
+        <div class="fee-summary" id="feeSummary" style="display:none">
+          <h3>Registration Fee Summary</h3>
+          <div id="feeBreakdown"></div>
+          <div class="fee-total" id="feeTotal"></div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Registration</button>
+      </form>
+
+      <!-- Success message -->
+      <div id="successMsg" class="success-msg" style="display:none">
+        <div class="success-icon">✅</div>
+        <h3>Registration Received!</h3>
+        <p>Thank you! Your registration has been submitted. You will receive a confirmation email within 24 hours at the address provided.</p>
+        <p>Your reference number: <strong id="refNumber"></strong></p>
+        <button class="btn-primary" onclick="resetForm()">Register Another Athlete</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>🥋 Dragon Cup Taekwondo Championship 2026</p>
+      <p>For questions: <a href="mailto:info@dragoncup2026.com">info@dragoncup2026.com</a></p>
+      <p class="footer-small">Sanctioned by the World Taekwondo Federation &nbsp;·&nbsp; All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
