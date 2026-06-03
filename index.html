@@ -3,1274 +3,960 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dragon Cup 2026 — Official Registration</title>
+<title>Bay Area Taekwondo Festival — Registration</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #0e0e0e;
-  --panel: #161616;
-  --border: #2a2a2a;
-  --red: #e02b2b;
-  --dark-red: #a81c1c;
-  --gold: #d4a017;
-  --text: #e8e8e8;
-  --muted: #999;
-  --very-muted: #555;
-  --input-bg: #111;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'DM Mono', monospace;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-/* ─── STICKY NAV ─── */
-#sticky-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  height: 56px;
-  background: rgba(14,14,14,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: 4px;
-  color: var(--text);
-  text-decoration: none;
-}
-.nav-logo span { color: var(--red); }
-
-.nav-cta {
-  font-family: var(--font-display);
-  font-size: 15px;
-  letter-spacing: 3px;
-  color: #fff;
-  background: var(--red);
-  border: none;
-  padding: 8px 22px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s;
-  display: inline-block;
-}
-.nav-cta:hover { background: var(--dark-red); }
-
-/* ─── HERO ─── */
-#hero {
-  position: relative;
-  padding: 140px 32px 72px;
-  border-bottom: 3px solid var(--red);
-  overflow: hidden;
-  text-align: center;
-}
-
-.hero-watermark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: clamp(120px, 22vw, 280px);
-  color: var(--red);
-  opacity: 0.04;
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
-.hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-#hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(56px, 10vw, 110px);
-  line-height: 0.92;
-  letter-spacing: 4px;
-  color: var(--text);
-  text-transform: uppercase;
-  position: relative;
-  margin-bottom: 28px;
-}
-#hero h1 span { color: var(--red); }
-
-.hero-meta {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.hero-meta-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.hero-meta-item .label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--very-muted);
-  text-transform: uppercase;
-}
-
-.hero-meta-item .value {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-.hero-meta-sep {
-  width: 1px;
-  background: var(--border);
-  align-self: stretch;
-}
-
-#late-fee-banner {
-  display: none;
-  margin: 28px auto 0;
-  max-width: 480px;
-  background: rgba(212,160,23,0.1);
-  border: 1px solid var(--gold);
-  padding: 10px 20px;
-  position: relative;
-}
-#late-fee-banner.visible { display: block; }
-#late-fee-banner p {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-/* ─── MAIN CONTENT ─── */
-#main-content {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 56px 20px 80px;
-}
-
-/* ─── SECTION LABEL ─── */
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 4px;
-  height: 24px;
-  background: var(--red);
-  flex-shrink: 0;
-}
-.section-label-text {
-  font-family: var(--font-display);
-  font-size: 18px;
-  letter-spacing: 3px;
-  color: var(--text);
-  text-transform: uppercase;
-}
-.section-label-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--very-muted);
-  letter-spacing: 2px;
-  margin-left: auto;
-}
-
-/* ─── CARD ─── */
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  padding: 28px;
-  margin-bottom: 24px;
-}
-
-/* ─── FORM GRID ─── */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.form-grid .full { grid-column: 1 / -1; }
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.field label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
-.field input,
-.field select,
-.field textarea {
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 14px;
-  padding: 10px 14px;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  width: 100%;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.field select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-  cursor: pointer;
-}
-
-.field select option { background: #1a1a1a; }
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(224,43,43,0.15);
-}
-
-.field input.error,
-.field select.error {
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(224,43,43,0.2);
-}
-
-.field .err-msg {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--red);
-  letter-spacing: 1px;
-  display: none;
-}
-.field.has-error .err-msg { display: block; }
-
-/* ─── EVENT CARDS ─── */
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-bottom: 20px;
-}
-
-.event-toggle {
-  position: relative;
-}
-
-.event-toggle input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.event-toggle label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 18px 16px;
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  user-select: none;
-  height: 100%;
-}
-
-.event-toggle input:checked + label {
-  border-color: var(--red);
-  background: rgba(224,43,43,0.08);
-}
-
-.event-toggle label:hover {
-  border-color: var(--very-muted);
-}
-
-.event-icon {
-  font-size: 22px;
-  line-height: 1;
-}
-
-.event-name {
-  font-family: var(--font-display);
-  font-size: 16px;
-  letter-spacing: 2px;
-  color: var(--text);
-  line-height: 1.1;
-}
-
-.event-sub {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
-
-.event-price {
-  font-family: var(--font-display);
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: var(--red);
-  margin-top: auto;
-}
-
-.bundle-note {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 1px;
-  padding: 10px 14px;
-  border: 1px solid rgba(212,160,23,0.25);
-  background: rgba(212,160,23,0.05);
-  margin-bottom: 20px;
-}
-
-/* ─── WEIGHT CLASS ─── */
-#weight-class-row {
-  display: none;
-  margin-top: 4px;
-}
-#weight-class-row.visible { display: flex; }
-
-/* ─── FEE PANEL ─── */
-#fee-panel {
-  display: flex;
-  align-items: stretch;
-  border: 1px solid var(--border);
-  background: var(--input-bg);
-  margin-top: 20px;
-  overflow: hidden;
-}
-
-#fee-breakdown {
-  flex: 1;
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-right: 1px solid var(--border);
-}
-
-.fee-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.fee-row .fee-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--muted);
-}
-
-.fee-row .fee-amount {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text);
-}
-
-.fee-row.discount .fee-amount { color: var(--gold); }
-
-.fee-empty {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--very-muted);
-  letter-spacing: 1px;
-}
-
-#fee-total-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 28px;
-  gap: 4px;
-  min-width: 120px;
-}
-
-#fee-total-box .total-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--very-muted);
-  text-transform: uppercase;
-}
-
-#fee-total {
-  font-family: var(--font-display);
-  font-size: 48px;
-  color: var(--red);
-  line-height: 1;
-  letter-spacing: 2px;
-}
-
-/* ─── WAIVER ─── */
-.waiver-box {
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  padding: 16px;
-  max-height: 160px;
-  overflow-y: auto;
-  margin-bottom: 16px;
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.7;
-  font-family: var(--font-body);
-}
-
-.waiver-box::-webkit-scrollbar { width: 4px; }
-.waiver-box::-webkit-scrollbar-track { background: transparent; }
-.waiver-box::-webkit-scrollbar-thumb { background: var(--border); }
-
-.checkbox-field {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 12px;
-  cursor: pointer;
-}
-
-.checkbox-field input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  margin-top: 2px;
-  position: relative;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.checkbox-field input[type="checkbox"]:checked {
-  background: var(--red);
-  border-color: var(--red);
-}
-
-.checkbox-field input[type="checkbox"]:checked::after {
-  content: '';
-  position: absolute;
-  left: 4px; top: 1px;
-  width: 5px; height: 9px;
-  border: 2px solid #fff;
-  border-left: none;
-  border-top: none;
-  transform: rotate(45deg);
-}
-
-.checkbox-field input[type="checkbox"].error {
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(224,43,43,0.2);
-}
-
-.checkbox-field .check-label {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-#guardian-fields {
-  display: none;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-#guardian-fields.visible { display: block; }
-#guardian-fields .form-grid { margin-top: 12px; }
-
-/* ─── SUBMIT BUTTON ─── */
-#submit-btn {
-  width: 100%;
-  padding: 18px;
-  background: var(--red);
-  color: #fff;
-  border: none;
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: 6px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-  margin-top: 8px;
-  text-transform: uppercase;
-}
-#submit-btn:hover { background: var(--dark-red); }
-#submit-btn:active { transform: scale(0.99); }
-#submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* ─── SUCCESS SCREEN ─── */
-#success-screen {
-  display: none;
-  text-align: center;
-  padding: 80px 32px;
-  animation: fadeIn 0.4s ease;
-}
-#success-screen.visible { display: block; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.success-check {
-  font-size: 72px;
-  margin-bottom: 24px;
-  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
-  display: block;
-}
-
-@keyframes popIn {
-  from { transform: scale(0); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.success-title {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 8vw, 72px);
-  letter-spacing: 6px;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.success-sub {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 40px;
-}
-
-.success-details {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0;
-  text-align: left;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  min-width: 320px;
-  max-width: 400px;
-  width: 100%;
-}
-
-.success-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-}
-.success-row:last-child { border-bottom: none; }
-
-.success-row-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--very-muted);
-  text-transform: uppercase;
-}
-
-.success-row-value {
-  font-family: var(--font-display);
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: var(--text);
-}
-.success-row-value.red { color: var(--red); }
-
-.success-note {
-  margin-top: 28px;
-  font-size: 13px;
-  color: var(--very-muted);
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ─── DIVIDER ─── */
-.section-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 32px 0;
-}
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 600px) {
-  .form-grid { grid-template-columns: 1fr; }
-  .form-grid .full { grid-column: 1; }
-  .events-grid { grid-template-columns: 1fr; }
-  #fee-panel { flex-direction: column; }
-  #fee-breakdown { border-right: none; border-bottom: 1px solid var(--border); }
-  #fee-total-box { padding: 16px 20px; flex-direction: row; gap: 12px; }
-  #fee-total { font-size: 36px; }
-  .hero-meta-sep { display: none; }
-  #sticky-nav { padding: 0 16px; }
-  #main-content { padding: 40px 16px 60px; }
-  .card { padding: 20px 16px; }
-}
+  :root {
+    --red:    #e02b2b;
+    --red-dk: #a81c1c;
+    --gold:   #d4a017;
+    --dark:   #0e0e0e;
+    --panel:  #161616;
+    --border: #2a2a2a;
+    --muted:  #555;
+    --text:   #e8e8e8;
+    --sub:    #999;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────────── */
+  .hero {
+    background: #0e0e0e;
+    border-bottom: 3px solid var(--red);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '태권도';
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 120px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: rgba(224,43,43,0.04);
+    letter-spacing: 8px;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .tkd-icon {
+    width: 52px;
+    height: 52px;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 8vw, 72px);
+    letter-spacing: 4px;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .hero h1 span { color: var(--red); }
+
+  .hero-meta {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-size: 13px;
+    color: var(--sub);
+  }
+
+  .hero-meta strong { color: var(--text); }
+
+  /* ── LATE FEE BANNER ──────────────────────────────────────── */
+  #late-banner {
+    background: linear-gradient(90deg, #1a0a00, #2a1200);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 20px;
+    display: none;
+  }
+
+  /* ── FORM WRAPPER ─────────────────────────────────────────── */
+  .wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  /* ── SECTION HEADERS ──────────────────────────────────────── */
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+    border-left: 3px solid var(--red);
+    padding-left: 10px;
+    margin: 36px 0 18px;
+  }
+
+  /* ── CARDS ────────────────────────────────────────────────── */
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  /* ── GRID ─────────────────────────────────────────────────── */
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 2fr 2fr 1fr; }
+  .grid-city { grid-template-columns: 2fr 1fr 1.2fr; }
+
+  @media (max-width: 560px) {
+    .grid-2, .grid-3, .grid-city { grid-template-columns: 1fr; }
+  }
+
+  /* ── FORM CONTROLS ────────────────────────────────────────── */
+  .field { display: flex; flex-direction: column; gap: 6px; }
+
+  label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--sub);
+    text-transform: uppercase;
+  }
+
+  label .req { color: var(--red); margin-left: 2px; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px 14px;
+    transition: border-color .2s, box-shadow .2s;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(224,43,43,.12);
+  }
+
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+
+  /* ── EVENTS ───────────────────────────────────────────────── */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .event-check {
+    display: none;
+  }
+
+  .event-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: #111;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all .2s;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sub);
+    user-select: none;
+  }
+
+  .event-label .evt-icon { font-size: 26px; line-height: 1; }
+  .event-label:hover { border-color: var(--red); color: var(--text); }
+  .event-check:checked + .event-label {
+    border-color: var(--red);
+    background: rgba(224,43,43,.08);
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(224,43,43,.18);
+  }
+
+  /* ── FEE DISPLAY ──────────────────────────────────────────── */
+  .fee-display {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .fee-rows { display: flex; flex-direction: column; gap: 4px; }
+  .fee-row { display: flex; gap: 16px; font-size: 13px; color: var(--sub); }
+  .fee-row span:last-child { color: var(--text); font-variant-numeric: tabular-nums; }
+
+  .fee-total {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    color: var(--red);
+  }
+
+  .fee-total small { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--sub); display: block; text-align: right; letter-spacing: 0; font-family: 'DM Sans', sans-serif; }
+
+  /* ── WAIVER ───────────────────────────────────────────────── */
+  .waiver-box {
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    max-height: 160px;
+    overflow-y: auto;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .waiver-box::-webkit-scrollbar { width: 4px; }
+  .waiver-box::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .waiver-check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  .waiver-check-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    accent-color: var(--red);
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  .waiver-check-row span {
+    font-size: 13px;
+    color: var(--sub);
+    line-height: 1.5;
+  }
+
+  /* ── GUARDIAN SECTION ─────────────────────────────────────── */
+  #guardian-section {
+    display: none;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .under18-check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+
+  .under18-check-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+
+  .under18-check-row span { font-size: 13px; color: var(--sub); }
+
+  /* ── SUBMIT ───────────────────────────────────────────────── */
+  .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--red);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+    margin-top: 28px;
+  }
+
+  .submit-btn:hover { background: var(--red-dk); }
+  .submit-btn:active { transform: scale(.98); }
+  .submit-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; }
+
+  /* ── SUCCESS SCREEN ───────────────────────────────────────── */
+  #success-screen {
+    display: none;
+    text-align: center;
+    padding: 80px 24px;
+  }
+
+  .success-icon {
+    font-size: 72px;
+    display: block;
+    margin-bottom: 24px;
+    animation: pop .4s cubic-bezier(.34,1.56,.64,1) both;
+  }
+
+  @keyframes pop {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  #success-screen h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  #success-screen p { color: var(--sub); font-size: 15px; line-height: 1.6; }
+  #success-screen .total-confirm { color: var(--red); font-size: 28px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; margin: 16px 0; }
+
+  /* ── ERROR MSG ────────────────────────────────────────────── */
+  .error-msg { color: #f87171; font-size: 12px; margin-top: 4px; display: none; }
+
+  /* ── SPINNER ──────────────────────────────────────────────── */
+  .spinner {
+    width: 20px; height: 20px;
+    border: 2px solid rgba(255,255,255,.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── DIVIDER ──────────────────────────────────────────────── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 6px 0 20px;
+  }
+
+  /* ── STEP INDICATOR ───────────────────────────────────────── */
+  .steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+
+  .step { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; max-width: 130px; }
+  .step-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--muted); background: var(--dark); position: relative; z-index: 1; transition: all .3s; }
+  .step.active .step-dot { border-color: var(--red); color: var(--red); }
+  .step.done .step-dot { background: var(--red); border-color: var(--red); color: #fff; }
+  .step-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-align: center; }
+  .step.active .step-label { color: var(--text); }
+  .step-line { flex: 1; height: 1px; background: var(--border); margin: 0 4px; transform: translateY(-10px); }
 </style>
 </head>
+
 <body>
 
-<!-- STICKY NAV -->
-<nav id="sticky-nav">
-  <a href="#" class="nav-logo">DRAGON<span>CUP</span></a>
-  <a href="#form-section" class="nav-cta">REGISTER NOW</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-watermark" aria-hidden="true">태권도</div>
-  <p class="hero-eyebrow">DRAGON CUP 2026 · OFFICIAL REGISTRATION</p>
-  <h1>DRAGON CUP <span>CHAMPIONSHIP</span></h1>
+<!-- ── HERO ───────────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="hero-eyebrow">Official Tournament Registration</div>
+  <div style="display:flex;justify-content:center;margin-bottom:14px">
+    <a id="logo-back-link" href="#" target="_top" title="Back to tournament website" style="display:inline-block;cursor:pointer">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA40AAAHJCAYAAAAhAtxqAABYS0lEQVR42u3dd3yV9d3/8ffnOieblYQNYSgjw42rztrh6LSO3h3W9tdahU5bHGjvtvbuXZkCyoi22taqFeO8WxXEqjhqXYgghC0riiIjQELGOef6/v5IAgEZCSQ515W8no8HD5Kck5Pr+l7fnHPe+XyHBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAxGEwAAAARPSUlJ5LzBHwyJeOnDckaM/CctAiBZojQBAABAMDjnvK2vT+trVnu2p3Vfqt04oyaeMWIaLQMgmag0AgAABCEoKn6W8+Ofj20qLpCnbl5q/n+6nX7nzJRt/hIbPLialgJAaAQAAOg4QdHK503t6tL8s3yXOD/+UfHJ5qmHk3o7uRpLyZ/U+4tzxtFSAAiNAAAAHSssRstfm3qWc/Hzaz6YeZZMPWTqY1JXmUvI7C2LDp/Q85y7X7Qu/bfQYgAIjQAAAO1cSUlJ5ML+Hw2NKXaBS8Q/F/uoeJDk+kiWK6t7N2amGkvLvzf7UzNmppTbcoajAiA0AgAAtGPOOdv+yrhuMZd2gbn452s3Fh/nPNfHM+slKbr7HZgnJ2lLJCX/dz2/PHs6LQeA0AgAANC+w2J08ytTzzIXP7/2/ZlnmamPk+sjs6yGd11mDe/AXEJmb7q04bf0/dKcZ2g9AIRGAACA9hkUva0vTe7n+94Fnhf7XNX7xUUm18esfvhpwzuuxqHRU42Xkn9v9tkzZqZ0W7fE7Lw4LQmA0AgAANC+wmJ087ypZznFLoh9UHyuSX2c1Fum9N3hcJ/QaJIvT+sjaQX/0/PLT/+FVgRAaAQAAGhfQdH7YO7kfqmp3gVS7HM1G4qLZPVVxUbh8AChMe6kFyPp+bf2/srs52lNAIRGAACA9hMWI1tevP0kP1F7SW1ZfVXR1FtSev3qpzpoaPRU46Xl39v7q7Ovce6FKMNRARAaAQAAwh8UrXze1K41zj/H8xPfqtlQPFzm8qzRVhkN76YOEhqdpC2Wlv+7Pl9jdVQAhEYAAID2EBa9rS9N7herjV9au774QjMbJGmgrL6quE84PHBodAkze9NFh9/S9zJWRwVAaAQAAAh7WIxsee72k+KJ2ktqN8z8tDnlmed6OfOijQNhE0NjbSQ9/+Gc82ZMZHVUAIRGAACAcIfFlI/mTrnQU/zimnUzT3KmPJly94RDU5NDoycn57ZaWv6kvpfNGUfrAiA0AgAAhDMoWtkzU7JTPLtEfu3nY+uKj3OmPElZnwyHTQyNTr4zlXppw3/b54K7X7Qu/bfQ0gAIjQAAAOEKi97WuZP7xRLxS2vXFV/oTMNl6m31q6DuPxweOjR6pphMTyu9YHKfk2a8YYMHV9PaAAiNAAAAIQqL2/51R//aeM2V1WtmftGkPDPXy5lFpf3uqdjk0OikmkjG8Jk5n555V1r3dauZvwiA0AgAABCesBj58JkpI8yPX1G9ZuYpkgabqZf2CX6HFRo9OTlttoyCG/ued9dc6573Pi0OgNAIAAAQtrD43syzJQ2W1PUQeyo2PTRKvjwt8VLzr+v7jdlzaXEAhEYAAICwhMUnp4wwi19RvWbm2XIaLKsLiw3vfFogNMYsffjTPT571+9Tur+3kOGoAAiNAAAAIQqLVatmni3TYDN13TcctkBorI6kDZ/U95tzfk2rAyA0AgAAHDikeVVlU/p4ER2rlC4p6T2u+mdSw6KLX1G1un4Yqh14GOphh0aTk7TZSyu4sd+3nv4LPQAAoREA0CFDwOZnpvbyU/2eDV9L8SPOS8na2e3cH66hhVBSUhK58JT1Q1Oi3pmy+CmJmj+uS03Lfzolp3izZbbtIjANYVEufkX1qr3D4sHC4WGFRpkv05JIJvMXARAaAQAd6M3/mZ0/GOL5/vGRiB3nO3e0XLxnzdqZ6fKU3vAm2pnkpeTGMgZesdM5VcjcSkVsYSTaeWHOmVctpiU7xB8TotVlU86U6Uzn4p9yu+7Mkdn8RGT43LQeM1aldtZas7bbk3CvsLhi5tnO6sKiNTEcHkZojMnsaZdWMDnvW9e/yvxFAIRGAEB7fvNft6l5PPI1l6g9o2r1zKMkl+2ZusmzTrK6zc3Na/SmuW5bgfqPLSbTTpkr96Ldt6blfXu989wrkUiXZwmQ7aqfWPnaqV1TfZ2pqM40P3Z6YtedPeSpmzO9ZdHhs1J7zlyYtLCYiF9RvbI+LNavhrq/vRNbIjTKqcZLz5/Z/UL2XwRAaAQAtO8QEPnwiSkjfMWvqFox8xQz19/MusurD4kNb5C9Rh83Co+fvN0a7hMzz21SpPsH6f2+vUQpne7rfuYPn6fFw/kHhapV0/omzD/TFDsjUVF8opl6yLMeMtfFM81x0eEPpPZJSlj0Nj59W55i/sjqFTMvdKpf4OaA8w9bIDR6cpK2RtIKJva96I/3s/8iAEIjAKDdBoGNj92W55w/snr5zAudabB5jSoze1URDx4cG9+/cXC0us+dM1VZNGdVWr8rXvQinf9I5TEc/WPrqml9U/34Webin49X3lUgcz3M1KN+uGdCEb1t0eH3pfab+WxSwuKTd/T34zVX1i6f+UXfNNRMuZ8IeC0cGk3yfWl9JH34b/pdfM/T1qX/FnoLAEIjAKA9BoLUsocnXVa9bMYPJB0vT7lNqyIeOCw2vv+e261xmHTmaYfzcktT+337z4muuQ/2Pv7KSq5GwILioml9oynxs0zxz/s77yqQ53o4qY+Zsuqvoy+zZYoMvStjcPFLqZ0Gv9PGx2hlD0/JjkQTl1Ytn/ENmYok9Wr6SqdHFBoTkt700gt+1f/K2VTNAYDQCADtMhTYxidvy3W73HWVS6ZfJk8DzSza/DDYnEqk7X275JuntS6aMydr0MhJ3U5j5dVABMVIfUVxx10FZq6HM/UxT1mNrrUvU5lFht+XMWT6E6lZR7+VjD92bHxs0mW7ls+4UlK+mesns+gBAl5Lh8ZYJKPgqR4XzLglpee6JcxfBABCIwC0y3Cw7uFJA2vemf4/Ml1knnJ3VwObEQYPb9iq7Rs+nUzbLZLzaurAq/+n+6eueZ0r1LZ/PCh/Z2rXiOfO9i1+cWJbfVCU+lhkr6Ao1VWIyyV7NJoydFan4+c8l4Tjjb7/xORzzflXVy2dMULmBkoW3e/iNK0QGp1UE03Pn9n/e3N+Se8BAEIjALRLJSUlkU/F1xVVLpw+VaZTd1eQ9jOM9PDmMDY/ONbfp8aL5izIGDTyV91OY5GctgiKnnSmU/zM2Nbis8xTDyfled4ngmLDxzGZ5lg0/96uBXe/pfTl77dlha2kpCRytleW71v8mqqlMz8j6eiGVXwPFA5bNDR6cnLa6qUXTOz/ZRa8AQBCIwC098C4YMZ0ee5TkqJNGkZ6xPMZ93e77e/xEhbJXZA6+JobuxMcWyMsRssXTDnTJWJnxbfcebZ5Gug818MzL/cgVWRfZsssZdidmcNmPpu6RWttcJsucmPvPz4jR27XqOrSGV91sqFm6tqUcNhiodHknNPmaMbw0f0uZcEbACA0AkD7DQy25sFbe9a89ccZ8vRVmaKHmn+43yriYc9nPPCWHPs8XsKi2W+n5/3o+6ys2iLX3at6c3K/mBf5mnO1Z9R8XFxknnp4plxnDX80sE8OPfbkzLOtLjLszk7Dpz+R2i0Z8xZXppWVPHpl9fI7L5N0vOoXuWny3oktExp9mZZYRsF1A743ey49CgAIjQDQri25dtBdZu7bZnVDEJs9jPSI5zNqP5VI++TtnuIWyX7Wy/vh93qfOWoTV675fyAof2dqV1ftznYWvzj+cXGheeovU/eGIZ17X7O9Q6N5qpX0aCR12L1dT5vzTBKOP/L+Y5NPke//omrJjNO0zyI3bRcaXdxM8yy16Pd5P7j+VRa8AQBCIwC03xCxcmXa2n8//v2qBTPGSura/JVQrenzGZtbiWxUddz7vq7SMk66s++lj13HFWx62Nr+xpQTfT9xQc2HMy8wTz3MXJ7Msg5+LXaHxoSZ5itl+F05hXe9qK6r17VlUNq9X2jCH1lZOvMik4ZL9fMWm7h3YguGxpiXUfDUgB/M/ppzL0QJjABAaASAdqukpCRyatXq4yrfuPNxeRp4eMNIdeQrqzZxS45G93deNOeD9MHXXJdz+tWzuJIHDlpbX5rcz494F3iKfa7mw+Lh5qmPWf1QzqZcM8+cybYqbXhx58IZj6Zmt+1+i3XnsTKtrOSJK6sXT/+GMzteVreib1Orgi0cGqu99PxJA66a82t6GAAQGgGgQ1g8atC9MnflYQ0jPYLgeOggesghsQlFc9+IDvzBxQxT/URYjG5+ZepZ5scuiH1UfK6kPjL1lil9n7mJhxoiHJN5sy1l6Mzcc5I0FPWhyafI/F9ULp5+mpn6SY32C23L0GhykrZaRsHEgVfNHk8vAwBCIwB0iGCx9q8TP1fx2oxZ5qnrkcw/PPAwUrXqyqpm2qmME/+33+WPTeB6Ou+Dlyb3S/W9Czwv9rmq94uLPHN95FnuASu+B2hnz+Q70wZLzb8t96QZc9V53eo2HopqGx+8LTfh+aN3LZ5xkScNd7u30DC1eWj06lZI9dKHjx7wDVZIBQBCIwB0IO/+cOCTMn3x8MKbgrCyqq9Izsro4KvO6ajVRudcdPO8qWc5P3ZB7fvF53oR9XGqqyoecpjw/q9HTSQl/2+dT5j559Tcwa8l4XxSy2aNv6xq8czvOtkImXL3DnJtHhp9M1caSS/4Td7Vcx7nWQMACI0A0FGCRmTN3RPPqHhtxmwzZbXyMNLmrazahKC5T3CssswTb+lI1UbnnK1/aly3tIyUCyPO/2pNWXGRzPWRWW6z5pbudV+XsIi95aUWTM458e7XLbvvurY8p5KSkshpXlm+F0+M3LVo+kWSBsoU/WSQa9PQ6Mu0OJJV+NO8z854oy33oAQAQiMAIOkWfW/AFHl2bVsMI93v4x3hENY9W0BYwiI570R6/vzc3hdcWdmer1lJSUnkM9nvD/MVv6R63YwLTOorz/qZt2cV0WaHRq9url4kraC4y8nTH0kpt+VtHY6cW5n2/kOPf7di4YwfmjRUpq4HDnJtFhpjMj0dSSucnHcNW2oAAKERADoQ55yV3Tml79bXbp8vUy87jMVvmldFtBYMovs51rqfUR7JOP6/+n7jibnt9JqlfDR38gXyE+fXrp/xKedZnjVcu30XIGpeaIzL9KLSh0/s9fnkLHRTNuv2k83FrqlYNP0zkgYeuvrXJqExZpkFT/W+ZMaYtO5tO58TAAiNAIBABJBFVw64VLIHVT8HsTmLpDR/GKnaYmXVmkjWiXf2/cbj17ancL/+qXHd0iIpF0qJi2vWFh8nUx+zfffSbH5o9Ey+byqLpA0v7nnRnHFtvdegc87KHp6SbYn4dysWzPiuMw0xU9YhglxbhcYay8ifOWjUnF/ybAEALStKEwBAOJhZ7J1vDzhXJpkvyXNysrr3zr7kvLr3z87fE0Kc6u9re26XL7mGkFJ//4aQ0nB/1xD25OR8+8TtTXk8V/+5HfznpThnn24nYdHbOndyv4+emnCp1tx1YbVpiEXUT1J6C/2IWif3qKXl39PjzLvfkfqrjQNjZO0DE06pXjTzejOdJqlfYP7y7FQdySyYOGDU7N/wTAEArfAehCYAgPB455sD3pWnY9p0GGkLrqz6ifuaZNHcLZ2PHnlKt3N/uCakYTGy8ekpJ8qPX1izeuYXzZRnnuvlzKKHmjvalEpj4200ep1z19PqunpdMqqLLhb/buWCGd81T8N3B+FmLU7TCpVGk5PTVsssmDj4R+zBCACthUojAIQqoWhI40peXaXPyTUEEO2/cti4MnhYlUjPqWGXdPMbVRF3395weA1V0PqPGx7vQD9bkotvTtuxfvaxkkIVGp1zkQ+fnDLiw39OvKJ61cyzzdRHpl4yybXc32RrfblHvUj+Pb2/Mvs5aUCbn+PaByacUr1g5vWqry461yjgJZPJOV+brdPw0YO+/aen9aP+PD8AAKERADpwVnQusvKu8WdWPj8zvVWHkXp7Cjt7hUFfMnOSZwcMoof7s03mmWeDQ3QtUj54csqFH/5j4sXVK2ae5DwN3r1qaIvlIfnOaYOXmn9b76/NnubcX6LSnDY9zzVr1qRv+PvEUdVvz/yueRruWm6YbYsFxmhW/i8Hjppzv0YRGAGA0AgAHdz8+fO9lGdndnXewSp5dXMc5e9dydPBwqD2ebxDznd09WHQPhEGXf3n1sz5k76naNR3BaEIi/+YfNEHT0z4ds3K4uOclNewCEwLq3Vyj3pp+ff0/trs5yS16dzFkpKSyOnV6wrcvx8eXfH2jM9bfXUxQBNafElLUjILrhvwo9lzeXYAAEIjAEDSiBEjvAXSYLlDVfJcfTiz5ixGcxhDWA89JHZPFfQQP8/JnFOvQIfFxyZf9MHjE75dtbT4ePM0UA37K7Ygk3wnbVBK/m19L09OddGtXJm2/rXHv1uxYMbVTspvpVB8RIHRpMVKL/xp3o+uf1U/ns2TAwAQGgEAkqSyMs/51svMNXEl1PqVVVtwGOknw2cTh8Q2/Oz6zz9RBXXOzFckqGHx/UcnfLt6WfHxMg2UtdIQTaurLrrU/Hv6X9721UXnnLd21tQBG157YnTl/BlfVsO+i0EMjJmFPx384+tfZQ9GACA0AgAa699fci7qtL/wdqAw6Jo3jHTfIayHqkQ2GhJ7sMVvDhlE1ZAogxMWNzw2+aL3H5nw7V2lxcd7Vl9ZbJ2w6CS31UvJn9T3G3PGJaW66Fx0/d8mfbr67ek3OWlES8/PbCExLyP/6cE/m3Oxc3+JEhgBgNAIANif+uB2xMNI95nPeMAhrFITw2CjuZTNnM8oqysf+QEIjc65lA0PT77o/ZIJ365eWny8V1dtS2/F6XxxOb3oZeRP7HPR3W8lYd9Fe/9vM3LW/G3Cj6renvlfJg0P6PuCmJdZ8NTgn83+mtS2FVgAAKERAEIVGZ3cJjk76OI2e1Uid99eP4y0Nbfk2Gdl1SbPZwxAwzrnImWP3n7yhocmXFO1eOYZdZVFS3etdXB1zbQ1kj58Ut9vzRnn3J+jZv3bNAiVlJRE3vvr+MLq+cW/k+kMWf2c0uANSd0rMAIACI0AgIOERiVsvZpZyWvxLTlaZWVVS7iE1iYlLD48ZUTZQxOv2LVwxjnO0xAzZbVy0TMhp7eUkT+hz5fufrGtq4v155267t4Jl1fOL/6FSUWB2kpjb7WWWfDw4J/NvoJffwAgNAIAmvBe33zb4nuu2Suh7j2MVFKjlVWbM4z0oJXIvYawNppLeaAwu/d8Rt9891EbhiZv7aypA8oenPjLXQtnnO1Mg83UtbWLbE6qiaTnz+x5/sx7U3bZcuvSv7qNw6JtfPC23LV/m3TdrjdnXibT0S64/b3ay8yfdNTPZ/+aX30ASD6jCQAgBInROdtWWpq3+rqL1smrD2G2J7zJGn3tALfvvo8nyWy/999z+wEerwmPved2O8DP3vvxZK4i0nnENwZd89hTrR0WNz58R//aWM2VuxbM+JLnKV+mrvs9Ns+a0Ib7P6e97lv3sS/T0mh64W19v3TXXOue935b95+SkpLIiMr3CqvfLP6dk84xU+7udwANx9ro40N93fa5j9Tomh7we62pj1ntZRZMPOoXs3/Dbz4ABAOVRgAIATNzkta/eeGAJfJV1OxhpJ9Y3KZ+1VOpadtitOKQWHkWr/Ej77Rm4C67Z0r2+vsnXrZrwYz/p7rKYtvsC2mqddKjkdSCu/p97+kXpbxk/MGhbjjqG8W/kKlIwR2OKonACACBfB9CEwBAeLx5/oA75emapla9Dl1FbEZFrQm3778SaQeoREpm8r1O+e8M+smNp7XG3D7nXOq6+8ZfVjV/5pXOs3yr22uxCdXDI6w0enKS2xLJKPyfvB/MnubcC9EkzF20jQ/elltT466rfH36ZTId3fSqoJJRaaz2MgomHjWawAgAhEYAwOGGgJQ3Pz/oy/Lco4cX3nREw0iPbEis7ff+5qkm0uWkewb9+LEft3BbRdc/MPlcJeJXV8yfOcI8DZQp2vQgeEShMSHTmy4t/5bBV895Jhl9paSkJHLSjnUFVW9Ov9FMF0n1w1GDGxqrI5kERgAgNAIAjjQImZm5Nz6ft0lmPfYbAJs0n3F/97fDDp9NrkTuPzjutM4jLjn6Z4/+q6XC0mm7yvKdxa+pfGPGZ8zT0c6Ubs09l8MPjTWRzPyZvb86896UnuuWJGNPQedcytq/TPpCxWvTfinZCPOU1fyA10ah0ZOTc1usU+Hvhvxy9nR+ywGA0BjUN2He1KlTByQSiZ/RHYCk8iT1MbO0hi/4vi/P8yr3vWP916t83/fr3qyak1Sluhly7ftJO16b2vWR2792XHZa35YfRrp3eDzyIHrwIbHOpK274jv/UdrlwZxzvl95pG2TYooelRLvM3hZ8SAnDfVMXfcNd60VGp3JbdwW3/Xcksr1Ma/3u91O/8H7Sfol8oamJvoNWjzzWJmOluqrqwEMjc6kXbWu9rEFO5bHvd5v5nz6B9uP5A8qknI8z+vKU2lo3n85SZskVdIaQJN+Z+KdO3d+eeTIkf8kNCbnAmRI+rWkkXRHILl5SFKGpMg+Xz9QpSahPXvZu30+b9ft9K28ThnXDs9Na85Kp00KgPsJji0TRPc/JDbunO5/c3viD09v23GkjXLFMZ3tsoJO1rNzSnrXdC/tQOGuNUJjQk6vra7Wy0t3xu+aV7mrvi+2uWNyIvr56blW2CM9o2u6l3ZkAa91Q6Mk7az29eCb2/2J/yqvaIE2M0mp9f8QkrdgkqoP8hwPYG87JV1sZguS8cM79Oqpzjlv7NixeTfddNP3JWXTF4FAYpXnfSzaUq1F5TU6rlvafvZI3P9Kpw1p2hrfrn1WVt29Emr9yqpN2Z/RDm9lVTmnihpff3h6W+RInn/P7p+u7xzbRVed0E3ZmRFFI237jndnta/Ziyo0r7RCcxbXRCV1SUafOKtfmv7wmZ7q2zlVGSnB/nuwk1RR5ev+N8o1+fntXrLaDIGQQhMATRKT9PzatWuXJusAOnSlsb7K+FtJN9IXAYTJN/t30i+G57be/MNWXlk17pyeKq3U9Y9vPuw2uPn0bJ03KEvdMiJ1QakJw0hbqtLom7Rua0yzF+7UpDnbk9oXLhmWpe8d11UDu6Uq0uiYG17lg1RpdFYXtB94vVyTX9jOLzIANE2FpO+Z2aPJOgCvAwdGb+zYsXmSvkc/BBA2D5ZV6M0t1XXVPVf3T359NdDV/XN+3dfU6PaG+zfc7g5yu3x35I/nGj9e/bH60sc7E3pk/uGFhkuGZumJi/voC0d3Vu+sqDKibfv3z4Tv9J9VVbrvlW1JD4y/OLmbfjwiWwO61gfGIL/uisAIAIfzsiPpnWQGRqljD/tKqx+W2ou+CCCM5m7coSFZKcpOi3xiGGlD1cd5TRxGup8hrJJkcnK+fWKY6Scebz9DXg9035jv9OiCnXp9faxZ5zuiR5q+XdhZPz4xW7mZUUXa+M+eDaFnzuIKvbisQnOW1CT1+v/h7Fx9bXhnZadHAj9uaHdgfIPACADNVC3pzmQfRIesNFJlBNAe/N9HVZr7YcXelbxG1T3XqLqnfT92zalKuoNWDnWQKue+VdB4wuml1VW64+XmBYcfHtNFt56dq0/1zVSPzGibV9V8J63dHNP9r5brpke3JDUwntA9VX88v6fOG5hVFxiD/ppLYASAw5WQtMDMHkj2gXTIOY3MZQTQXhybFdX3j8rRGd3TZWatMv/wkFtyNPHxnKS15TGNe+5jvbS2tknnd27fdF11TFf165Ki3IzIoecbtsKcxoRzen1dtZ4r3al7X0vu7gBn9k3T9afmqm/nlN3zOBtezfc3zzDZcxolaWeNrwfeLNfkF3bwCwsAzbNL0i/M7I/JPpAOV2l0zkXGjx8/QlQZAbQD71bG9c+y7VpUXiPnuxacz3igSqTbq3LomvHzNu2I68G3tzU5MP78uG66+ZRc5eemKTdJFbVYwunRt3fqgf9sS3pgvGxoln57Zg8N7Jba5vM4D+v1VvUVRgIjABwOX1JZEAKj1AHnNJpZwjk3SsxlBNBOPL+tRl/pka40r5uGd06tqzg2c1uM3XMYm7BthszJefaJ+Yyu/nPbdwsQk3bGfM1auEP3Ldh1yPM5t0+6flDUVRcf3UnZ6ZHdx9KmgcdJH+1M6Kl3d2js3HLdnORrfPWxXTTqhGz1yIqGYoxQQ2D8+5vlmjyPwAgAh6FG0l+CcjAdKjQ65yJjx449Q9IX6YcA2pN/fFytS3qm66K+XXVctzSpfvGa5uyheMg9GfcKg/sExwMEUeekj6viemLpDt35xqHDw8+O6aabTspVTmZEqUlaDtR30rJNNXp60Xbd9Wpl0q/tzadm65sFXZSbEQlFX9xdYXyrXFMIjABwWC9FqqsyjiM0JkF9lXGkpK70RQDtzWObqvWl7mmSuum4bmlysn1WQt2zsmnDm/tPhsEDr4SqRmFwd3A0O2AQdQlp/c6YHi8t190LDh6+zumdrh/kd9XFg5NXXZSkuO/0r+W79MqqnSp5pzrp13TKOd110eBO6poejtkkewXGFwmMAHCYaiT9OUgH1GFCI1VGAB3Bk5trdFFumj6q6aSzu2cqPeoduIrYnC059qlKuoaFZQ6wJUdcTv8uq9Z/NuzU/YsPPiT1Z4XddNMJucrJSF51sSHsPLl4p2aXVjR7O5CWdky3iH56co5O65upTqnhWbMunnCa9fYOAiMAHL7AVRk7VGikygigo5i9pUbHZ0X1cXVMZ/TopEFZKfsPg9pnT8ZmDmHd83iuvhJZt9Tmpqq4XlhfqRfXVurl9w+86M3JOWn6/vAu+urATspuWBk1Ga/OTtqwLabZS3dqyos7dEuSr9/pvdI05vTuGpqdpvRouALj4+9WaNIL5fwSAsDhi0l6MmgH1SFCI1VGAB3Nwsq4JOny3hk6LjtLp+akKzst0qQwuN/5jIeoRMqkyriv/2ys0pKPd+nPiw8+HPXbgzvpdyd1V3Z6JKnBKOFLCzdWa3bpDv1t/q6kX7cze6fpxlNy1L9LStKqrkcSGP979hZ++QDgCGKLpK2S7iY0JkF9lXG0qDIC6GAe/rBKx2ZGtWZnqgZ3ydRpOenqlhZp+sqqDfMZtacq2Xi+Y0NYfO3Daq3etktvflSrNzcdfGjnhJO668oh3dQ9idVFqW7+4rMrd+n55Tv0j6U1Sb9WFw3M0PUn52hAl1RFQrQhFoERAFpMraRH582bt4LQ2NZx3bmUcePGfUXS5+iHADqid3fVVR2PzYpqzY409cxM1VGd0zQoK1pXfTzA4je7P97PfMbKhK/3dsS0ZmetNlbU6K2PavXW5oOHxQv7ZOj7Q7rptB7JnafnVLfh/FNLd2rO0gq9XhZL+jW67Ogs/fLEHOVmRhWiAqPiPoERAFrw5WmrpOLzzjsvTmhsY2YWc85dKymLvgigQ4fHyj2vQefnpql/ZlQ5GSnqlBJRbnpEPdKjinrSoM4pu8Oib9LGqpiqfKm8NqEttXHtqPVVXl2rDRVxPVXWtArdT4Z108/yc5SbHk1qFc05aVNlXI+/u0NT/71DvwvAdbns6Cxdc2y2emZGQrEH4ycC4xwCIwC0gJik2UGsMrb70Nioyngy/RAA9pi7Ze+wd05OqrqneYqY1Dczunt1VV/SxzUJ1SSctsecNlUn9O72pv8B9LguKbp6SDd9tV/dVhrJDEW+k9Zvj+mxReX601uVgbgOVxd10TXHZqtHSPZgbBwYX1xdRWAEgJZTLenuIFYZ231obFRlTKcfAsCBvbS1tsUf84JeGfpVUXf1zUxJ+iqgCd/pjQ+q9fyKHbp/UVUg2vymk7L1X0O7KDdkgTHhO72xoVqz3i7Xj/jVAYCWEJP07Nq1axcE9QDbbWikyggAyfP9QV3006E56p7k4ahSXVVs9opK/WvlTj37Xk0g2ufmk7J14cBO6prmheq6Jnyn1+sD40tra+noANAyqiXdPnjw4GpCYxujyggAyTG+qLu+3r+LctKTuzrq7gVvlu/UP0p3auGmYIz4uenEbF04qJO6poYwMK6vC4xzV9fQ0QGgZcQkzV27du2bQT7IdhkaqTICQNs7tWuqRh7VTafmZiorycNRnaSKGl8Pvluu21/bod8HpI1uOjFbFwwMX2D0nbSuPE5gBICWVy3p7iBXGdtlaHTO2a233tr95ptv/pWoMgJAm/hKryz9cmiO+mcmf1P6hgVvnl6+XTPeqghMG910YrYuGBDWwBjTgwu2ERgBoGUlJC0sLS19JegHau2t5Z1zaZKuljRZHWBLEQBIth8N7KIv9O6knLS6+YtmVvfq4tXv8Vj/z7xPfrz79ibcd/f9PTvgfZ1Jy7fW6InS7bp/8a7AtNHvT87V2f0y6wJjw3loz3FLjc7/oF+va1vb5z4Heszm/Kz9PaYvaf22mP6+YJvue2cXnR0AWlalpGvM7IGgH6jXnlrdOWcTJkzIlTSKwAgAre83Q3L0ld6d1T01+ZvSJ3yn18uqNGvhtsAExqIuERWf1UPnNgTGML2mqm5O6Kx3ygmMANAKL1uSFoQhMErtrNJIlREA2saxWSn64cBuKuicps4p3j7Vw7avNMad03Nrd2nOyh16dl0whlAWdYnoJ8fl6ITuGXVbjhxG9e+TX2+bSmNDYPz7O+W6/dUddHgAaHmhqTJK7ajSSJURANrG6V3SdNPRuTq2c7o6R5P/MhL3nf5veYUeerc8MIFRkn5ybI6Oz81QeiRcf591knZWExgBoBX5kt4PS2CU2lGlkSojALS+L3fP0rf6dlZeRmrd/MX9Vg/bptLoTKqI+Zq7tlK3vLwlUO100/HZ+vKgzkqP7F0VbXjlDXKlMeacShbu1P/O20qHB4DWUSXpf8xsXFgOuF1UGqkyAkDr+2r3LP2wf1flpacmff5iw5Yas5aUBy8wHpet8/t3Cl2FUaqv2i6pIDACQOvxJZWFKTBK7aTS6JxLl3StpN8TGgGg5Y3q20UX9eik7mnRJlQPW7fS6DxTZa2vWUvLdceCYA2fvOm4bJ2f12n3KqmSQlNpTPhOL62r0o//sYkODwCtJ3RVRqkdVBqdc97YsWMHSPoJgREAWt7o/t305R6d1T0l+U+xTtLHlfHgBsb+4duHUaoLjG+UVeuhd8rp8ADQekJZZVQ7CVlpN9100/cl9aMfAkALB8Z+3fS53E7qGoAFb3wnbdgZ0xMrtuvPpZWBaqcxx2brgpAGRt9JyzfXatY75XppfS2dHgBaT62kh8J44KGuNNZXGfMkfY8+CAAta+pRPfS57E7qEpDAuH5nTLNKtwUyMJ4f4sC4rjymhxaW69k1NXR6AGjF6CJpm6T7CI1tr6HK2It+CAAtGBgH99CxWemBCowPLd2mv6+oClQ7XTYwS+f3C2dgdJJ21vp6cOE2PVxaRacHgNZVK+nRefPmvUdobMsXO6qMANA6gXFQDx2Tla50L/lrpQU5MF46IEtXDcsOb2Cs8TVrYbnuX7SLTg8Arf+0u1VS8XnnnRcnNLYtqowA0MKmDAxWYNxQEdNDy7bp7yuDFxh/ODxbPdIjobzO8YRTybs7dPvrO+j0AND6GqqMK8J6AqEMjSUlJZFx48bliyojALRcYBxAYGyKs3uk6YfDQhwYfaf/W1ahyf8pp9MDQNuokfS3sFYZpZCunvr1r3894Zy7VlQZAaDlAmNmutItGIGxrDKmh5Zv099XByswntE9Tb8sygl1YHx5XZV+88IWOj0AtI2YpGfXrl37bphPInSVRudc5NZbbz1b0lfpgwBw5Cbn9dAxGQGrMAYwMJ6SnapfFOYoLys1lNc54Tu98X61HlpUTqcHgLZTLen2wYMHV4f5JEJXaTSzhHNupKSu9EEAOMLA2C9gQ1IrY3po1TY9GLDAWNQpop8U5mpAVqoiFr7r7Dtp/Y64Hl5crpfL2IsRANpITNLctWvXvhn2EwlVaHTORcaOHXuGpC/SBwHgCANj32AFxrKGwPhe8LZ/+HFBjo7NTg9lYHRO2lQZ16xF2zT3PfZiBIA21C6qjKELjVQZAaBl/Kpnrs7tnBmYOYwbKmMqWbVND64JXmAcU5itL/XvrPQQJkYnqaLWV8mSHbp/MVtrAEAbSkh6pz1UGaUQzWlsNJeRKiMAHIFfdO+mMzplBKLC6CRVxHw9snp7IAPjT4d10+f7dgplYJTqFr55fNlO3fU2W2sAQBurlnRXe6gySiGqNFJlBIAjd012F32paxd18pL/N0MnqbLW18NrtuuB9yoD11aX9M/SqGHZ6poSzi2N477T7FWVmvDqNjo+ALSthKQFZvZAezmhULwSOueiY8eOvVBUGQHgsH2lU5a+0LmzugQkMFbEfJW8t10zlgWvCvbZnhm6aki2uqWGc2uNhO/0xgfVmvVuOR0fANpetaQ729MJhaLSaGZx59yNosoIAIfl/MwMXZOTrW6RYISghO80e0OFZiwPXmA8IydNvyjMVY+0cAbGhpVSS94t16LNcTo/ALTx07CkFe2pyiiFoNLonEsZO3bspZJOpw8CQPOdlpam73TrqtxoMEJQ3Hf654YKjV8czGGT3xncVXmZKaG81g0L38x6d5v+tZ6VUgEgCWokPdjeTirwlUYziznnrpWUTh8EgOb7Xrdu6psSjBCUcE6vflyl/120NZBtNfH4Hjq9e0Y4t9aQVFHja9aScj1QykqpAJAEvqQyM5vY3k4s0JXGRlXGk+mDANB8v8/N1dEpKQpCjTHhpLe21OjR97YHsq1uHJ6tU3IyQr1S6pOrKnTHfFZKBYAkqZH05/Z4YoGuNFJlBIDDd02XLvpKpy5KCcJejJLKdsX02Npy/XtrbeDa6tK+WRo1NEdZ0XAGxoTv9MqGKv3h1a10fABI4kudmY1rjycX2EojVUYAOHxfzsjShVmdlBmgvRgfXrNNz20K3jy7s3PS9IOjw7u1hu+kFdtqVbKknI4PAMnTbquMgQ2NzjmbOHFi7pgxY64VVUYAaJbTUtN0eefO6uYlf1BqQ2B8ZN12zdpQFbi2OrFTVD8dlqPuIV0p1Tlp0664SpaU6+UPaun8AJC8l7ttkkoIjW0r9frrr79cVBkBoNm+3qmL+kQDsvCN7zR7Y4WKVwdznt1VQ3KUl5ka2ncoO2t9Pbx0hx5ZUUXHB4DkqZX02Lx589YTGtvqRdA5mzBhQq6kUaLKCADNcm3nbBWkpAVk4RunVzdXaeKyYG6tceOwbB3bNV0hXfdGcd/pqVUV+uNCFr4BgGTGF0lbJRWfd9557XZz3CBWGlNvuOGGSyUNpQ8CQNOdn5apT6dnKj0IC984aeXOmB5dF8yVUi/tk6XP9eoU6pVSXymr0q2vsfANACRZraRH582bt6I9n2SgQuM+VcYofRAAmua4SFTf6tRFXbzkP607SRVxX4+tL9er5cGbZ3d2dpp+MDjcC9+s3Farh1n4BgCCoFrtvMoYuNAoKeWGG264UFQZAaBZLsvsqr6RYMxjjPtOT7y/U098GLx5dsdmRfX9wdnhXfhGUkWtr5LScr28kYVvACDJYpL+1d6rjJIUqHE5zjnPzHz6HxBsK1as+NzQoUN7S+pZ/yVPUq/6z6OSihr9j1b29fQsfScrW5kRk1n9M7unPR+bZF79/2afvP2A91WT79vwcVxO8z6u0q9KNweyrSYUddcZuZlKjdieV8CG42/0cePbzPZ5xWzcNgf6/kb3t0M95r73O8jXY07667vbNG0B8xgBIAB2Svqimb3c3k80UENACYxAOAwdOvS5srKy9Ly8vN2lpGXLlvX1PC/dzGzo0KGrG4XLPpKGSDpB0qck9aAFW85JkVRd2zlHmQGZx7i6MqbH1m/XrwLYVj8Y0EVXDOyiFC+88xhnr9lFYASAYIhJmrt27do3O8LJGtcbQGtxzllZWVl6TU1N5yFDhmxaunTpufn5+adLukDSebTQkbspK0fnpWfVrQDapOph61QanUkVCV/F723VYx/uClw7fbZ7uq4bmquctIgkO3SlMGCVxoSkhZtqNPmNzVq0NU7HB4Dk6zBVRonFZgC0IjNzkqrq/yk/P/+lZcuWLZb0dH5+/smSvkN4PHznp2bqR1nZgdle45mPKgMZGE/MimpMQQ/lpIZzHqPvpPU7Y3pkWTmBEQCCIS7p3x2lykhoBJCMELnFObd10aJF76Wnp789bNiwL0q6VgxbbbaL07qokyV/PbOEk5bsrNWk1cHcj/FbA7spLzMllNfYSaqI+XpsxQ49ubaaTg8AwVAj6a+DBw/uME/MhEYAyQqPlc65RQsWLPjgxBNPXCLp56Lq2GRXpnfRN9O7BCLUVCZ8/WPjDl0TwHb6QV4XXTGgi0K6HaMSvtPT71Xo3tIKOj1aU6Wka83sbpoCAKERQBDD48crV66cI2nDkCFDbpD0X7TMwZ0USdUvOuUqJRCL37j4wh3V85/6uGp50LrXF3pm9PzJ4JwLMiNh3Y/R+avLYytvfWPb6/T6Jr2fOV6s2HxYXU3S+tLS0lk0BYADvqjSBACCwDnnrVy5cvjQoUNHSfopLXJg12Zk66L0TnVzGZu5YE0LL4STiOYVvn7qw8+cuWLFiqOC0j7Dhg1777ETe34qGone2SM9ctwnFpgJx0I4vjNbXN2p4Oe5v7xjPb3+kNKGDh36cymQBe+gi0t63swuoCkAHAiVRgCBYGa+c255aWnpHYWFhYMlfYlW+aRTIqm6qXMPBWRJl2qlZc5sCGoB+gNExmtnDbhc0rCw/g1F0mYvu/D3p19ywys2bBir3zThmkvaTkscthqaAAChEUCYguOa0tLS3xQWFvaUdCqtsrcvp3dRFwvEcMtYtH/hM6fe//gDAQsPKcumTrhI0pWS0kN6mau97ILpvUdOmmNFRQRGAEDSeTQBgIAFx0RhYeG7kn4jaRctssdpkVSdkBKUHOSqXXr61IAFRq90ypSB5Q9P+29JuSG9zLFIduGc46Y/8/ueRUWsfgMAIDQCwAGCY9zMnpE0mdbY41OpWcq0QExFr4n2L7q/5++nvhmwfuPvfHjKTZKODWe/r9uS0U/J/F96OwCA0AgAh3DLLbd4K1eu/IukJbRG3VzGc9IygxFupGo/PX16kPancitXppVOGTfKSZdKFsqpF86pKiW78L+P++pPF9HjAQCERgA4dGj0hw4d+r6ku2gN6czUrMDMZYzkFf7rtKuuXRGUtikpKYmU/uORwu0l02+U1DWkl7gmklNwZ88f3faknXce8xgBAIRGAGii2qVLl/5D0tqO3AgnRKI6NTVAcxkz0m8PUrD5+te/ntjxcPGvJBsYxuvrpISXW/jWsTOeuY55jAAAQiMANIOZuYKCgk2SHuzI7TAwmqZcL/kjLp0pER1Q9E6Q5jKuWbMmfcmUCdc55y4M6eV1nvSxF0m7gd94AAChEQAOT62kxzpyA5ybkhWIfRnNqVZpmY8HZS6jcy6y69GHTt4+a9q1MmWFMjFK1V524cRjvnbtG/yqAwAIjQBwOEHFLLFs2bI16qAL4pwVTdOwaGpgArwn7/8CEhitdOLEHtsfnvFbSf1CenlrU3IKHzn2V3ffyzxGAAChEQCOQEFBwRZJr3TEcz82JUPpwdhmw48MLFx98g9/sj4gTZO2/eHp35N0VkgvrS+5pUrNmmT9+2/htxwAQGgEgCPgnEuV9O+Odt6FXkQnpQRlARzFvLSM14JQEXPORUpvG3+yzP1EUnoYr61Ju7zsY/73mIt/UspvOAAg6KI0AYAQSEha0dFOuotF1d+LBucaOHsnEIHLLPHqqXnXKaTDUk2qsdyC+/v8ZNIcKypiWCoAIPCoNAIIA3/58uUbOtpJD4qmKiUYQ1MlcwlF3HvJPgy3cmVa6W0TRkn6XBivacP2GscXPzOK7TUAAGFBpRFA4JmZk/SBc65DnfewaFqg0o7vW00yD6GkpCRS+o9HCssfmnGjycK4Wqoz02YvLeN3/FYDAMKESiMABNBxXkSFKak0RCNf//rXE+UPFv9KzgaG9BRqvJyCv3a6dvLLXE0AAKERAHBEsiyqbIsE5nhM5nlyg5L1851zqYtvm3Clk7swjNezfljq/BPuemZMUPa5BACA0AgAIZYdiSoSoONxUlRmpycpMHrvTJw4cPvfp11nUjiHpUofu7S0G+jZAABCIwCgRfSJBG7KeWrig7UXrPpbcc82/8kbN6bvemj6TyVXEMZr6aRqr3vhxBO+du0b9GwAAKERANAieniBC43mV2zuv/WZuT9u08DlXHRZyd/Plty3JAvh4m0uHu1R+NLxv7773iDscQkAAKERQLtUUlISGTt27IiOFRojwTsop7T4B2u/u/LuO7/cRoHRSidO7L7tvtvHSMoN4WV0km12qem/sf79t/CbDAAgNAJAK7n88sttzJgxvTrSOafIgnhY5io299/897v+sOyeP/2gDX5eavmDd1zupNPDeA2dVB3pXjjx+Et+/ja/xQAAQiMAtK6opONphkCIuIrNRdv+PuNXS++47S/L/vynz7RK4HLOWzh57EAnjZZTeggjYzzavfCl43/LsFQAQPt4IwYAgWZm1c65s2iJwPBUsWXQtr9P7eV17j5i6bQpC2T6d0p6+qtDrhq1+AjDoq16YFrnVcUTCiv+XnyDFMo9GZ3MNiudYakAAEIjALSlM2mCIKUimaRMVW4+ZvusyUc7c+d6nXtsXj59ylbJrTFP2xO+lnieJDPfzD50SmzyfRf15B0jSYpIUSfPeTrKOdfJM+u86s6Jg3f+a3rUr3FdzWmoC2PjmGoiOQX3Hn/Jz9/WtCfoLAAAQiMAtGo4cS46fvz4z0vqSmsEODzKBrrKzQO3PTzZmVmFPMVk2m4myeTkqdpM1TKZTN3kSTLJq/u8kzxFzZQiU5bzpdg2yblQtkcimls4/4S754zRPc/QQQAAhEYAaG1mFnfOXU5LhOeSSeosJ8mU0zhNNV7bxw6WuiqcErvCmaE9abNLy/gd3QAA0J6wEA6A4L4Dd8679dZbh0n6Skc79zI/1jGvebyuyqhQjktVjde94K/drpv8Mr+9AID2hEojgMAyM9859xOFc4++I/JBosMtuOnkXGVsq7a7mPoFc8eRg/IjPQqWnXDPM2N0z2B+eQEA7QqVRgDBTBDORcaNG3eWpG91xPP/MNGBKo2mmHw9XfOx3ZaoVHY4T0G7LJr1B35zAQCERgBom8Bot956a88bb7xxgjpglVGStvoxbXd++77OUkLSm5GcotFH3/bMb+M7/RHOV2YIA2ONdS+4v8/Pfj+H314AAKERANogME6aNKnHzTffPFHSKR21Hd5OxPVOrLpdnpuZfMmtj3Yv/PWIf6w/9YQ/z55W9n//HOScnRfGc3HSBqWkT+tZVFTBbzAAgNAIAG0QGK+77rrJki5WB593/XZtVbsLi2ZufaRnwdiTn9ww8ITf3/1H55yVTpnSp/yvd/zKpKzwdVpVeT0Kx534jWtX8BsMAGivjCYAEAQlJSWRlStXFtx8881j6gNjFq0i3d65l4qiqQd9Fq/fC1HyDvCxSeY13Neacd+mP+7BfoZ58iVXFu1TeN+J9z7z3/v8oSDt1WPzrvZNk2UWNWv06mS7w+aeVytrdGza++v7+969zmP3/W3/j9n4ew/0uHs9pot7PYqeO+kvcy6kpyY5uzuXIekWSTfQGs0WlzTbzL5CUwA4EFZPBZB0K1euTHvkkUe+e/PNN18tKZ/AuMcL1Ts1JCtHaRa+v/GZyTe5Mq9X4X0j7nvmv6UN+77RtwUTJuT6ZqNC+HrkJNvspaX/hl4KACA0AsARKikpiZSVlQ12zjWEQc8511tSTzPr+uijj545ZsyY0yQNpLX29kRsl27MzNHn00KUo518eVoe6VXw2IgHPhkWdysrS6+8f/ooyQ0N4cCXGq9nwb3H/9fP39adT9BRAQCERgABfn/unE2bNq1zLBZr1uZwiUTCPM/rIqlJ32dmEefcMQc7Ds/zOjvnBu172+rVq23MmDGdGj3nmKT0+n8pkrrXf4z9eK6mQn0jKQcfphqM3hiX7JVIn8LHT5415w5p/cH6rbds8uQ8Of1QZmF7LfIjPQqWnfjnZ8boz8/QQQEAhEaghYKNN3Xq1F6+7/ds7Z/V3DB0OOdiZkephYZQ1oexosP9/nHjxtmYMWOikjodxrenNOP7TFLXQ9yeIoaWtri3ErW6IJomZXQLYnB0TtruSXNS+hY+MWLW3IcOWFlsbOPG9C1/uf0nknqF7XqYVKXUzKn0TAAAoTE5wSJy2223nSDpmDA25qEqMQE4tqJk/fz6YNNQWWoLzQlDh/GeUZ0kRVro8bxDhDFAz8Rr9PlomirTOuvU1IwgPGPHJft3pH/RM6eWzBkrSWvWvJSuWYf+W41zLlJ6220n+c59K4RTNWNez8JnTvzj4/fSK9FOmKS8SZMmfZemCLV4VlbWwlGjRi2mKdBaTxRBCo3pkn4u6ZoQt2dQ3/wTTIB24PRIqs5MzdIZaZnqal4br57q4ubZv830b29AwX9Oe2Tuk66sLNf699/S3PN4uSjvAUnfOuhKpcFbPdVJ+ig17+QvHv/Hx96mNwbq/QOrpx5B80mqkvQRTRFq1ZJuN7O7aAq0hqANTzVJOWqlYYUAEHavJWolyf9+StbGS7KyX0szO8ekHq34ZnKnSQsk/Ts6oPA/pz0+90lJcuP/FtUjc9XcwOiciyyaOPGM7fdO+2II93yqifQquPe4b/50kf74GJ0R7YVJyuS9V+hVSepGM6CjhEYAQBPeHPw5Vvk7M/uTJD2bkzdZcmdIOtbq3vwd7jtH30kfmbRSsoUpRxUuPO2JOffsDny3/S2qx+fW3fe88+KH9TPMEi8X5o00C93IBz/Ss2DZSX99Zoz+yuI3AABCIwAguGolPdYQGOsXZvplw43P9ux/vWd2lJPrY9KgRs/1RU7yzfSepEpnkjntkOk9Oe2UZ6ujRxet/tSTs//Z8FibZs3upCfm7Al8hxkUd4fO+ipj+b3TvuiFMKhbGovfAAAIjQCAYPMlLZU0aXeQM/MbhTLbUVp6T9eioq2HFepm3hvVk7N3f96zqKiiJQ/ezBIvFeT9xkxdw7Uto4tHeha9wuI3AICOyqMJACAcyUXSZkn/O2/evNIDhDJ3uIFROvJK4kEP3rmUxbdNuFTSWWFrd+dsi5eeOZ4uCAAgNAIAgqxa0vTS0tI557ViuGstZhbbeve0a9V22+60zHFLtdFeBQ93vem2/9AFAQCERgBAkAPjJDP7fVELDxltC865lMUTJlwq6eRwBV35kjYoI7148ODB1XRDAAChEQAQRDFJs83sN2E9ATOLbf1L+KqMzqnGehb++cRvXLuCbggAIDQCAIKoVlKJmV0S1hPYXWV04aoyOinh9S58++T75oy1EA4HBgCgJbF6KgAEU8OQ1F+H+STMLPbysLxvyQvdXMZqS8sophsCAEClEQCCxknaIumWsAdG51xk4YQJZ/umz4bsyOORXoWvjPjT4w/QHQEAoNIIAEGSkPSWpAlm9ljYT8bMEi8OzxtpUteQHXiVS2GLDQAAGlBpBIDkc5K2SrrDzE5fu3bt06E/ofoqo5O+GK7AqNpor4LHc3/NFhsAADSg0ggAyVUr6VFJ95rZM5LUHrZ3CGmV0clpi0vrdBtbbAAAsAeVRgBIjpikf0q60sy+NW/evOfay4mVlJREFk6YcJJz4aoymlQb6V3w6Enf/kkp3RMAgD2oNAJA23GSyiU9JulZM3tozZo16ZJ0Xjva1uHyyy9PfXnYgG+ahavK6KStlpJezBYbAADsjUojALS+uKQXJd1qZjlmdtXatWv/T2ofQ1H3Tl7OWzh5cp6TvhOyQ6/2+hQUn3jltSvorgAA7I1KIwC0joSkdyS9IulfZvZk4xvb8Zy5tO13Tfm+ZL3CcsBm8r3eBWUn3//M73X/M/RcAAAIjQDQKpykHZJelbRA0mtm9s+VK1f2Lysr+7BDNIBztnzChGw5+3q4jls1Xlrmn+nCAAAQGgGgpUPiTtVVExdKWmhm9zTc+MILL0QlaejQoWUdqE1SN/1x2qWKKE/OQnHADVXGk/78+Di6NAAAhEYAOBK+pNWSVtWHxFWNQ+KSJUs6Nb7zeR1wMRUzq3lxSN6VcuF5ban1nXt61YbKSZMmTQ7ycTrnEp07d142cuTIe/hVBLAfEUnH0AwgNAJAG70/V10FcXWjfxvN7PbGd9o3JBYVFVV06EZzLmXRxIlfKf/jtNC8afGdtLoi5v3hzSVHSxoY8MONS3qO0AjgADyFa19cEBoBINRMUoakQZK6qW4/xZxJkyZ9V1LcOfdut27ddhYVFa2hqRo1mlnsxaPzfihTeliOOeGcZm+ssCulziE43LikLHoaAIDQCADBkCIpuz40dpPkRo8e/Tnt2Wcxtn379h3Oufc8z9vonFvlnHu3U6dOH44aNWpTR2ss51xk0cSJZ2y9c9pZXjimMtZVGStjerBsJ70dAABCIwAcNqsPj5KU0/iG0aNHO0kVkqrq/98mqaqiouJjz/MWOudWZWVlLRw1atTidt9IZokXh+RdYhaeSlh9lVFX0scBACA0AkArBsrO9f96Nnzxuuuui0k6sz5Ibq2oqNiguoVz3unUqdN/2lsl0jnnLZw8eUj5zKnfDMsxU2UEAIDQCADJlFIfIntKOuq66647vj5EbpO0qaKi4l1Jc9tRgEwpnzH1SzL1CssBJ5zT7A+pMgIAQGgEgOCFyGH1IfKzkjZVVlYuysrKemzUqFHPh/XkzKxm3tF5V4XleKkyAgBAaASAQGcsSV3q/w0bPXr08ZLOraysXCbpsZ49e/7jyiuvrAzLyTjnUhZNmPDVbX+cNrTu1IIv4ZzmfFih79IXAQAgNAJASALkMaNHjx4m6URJ39+0adOTPXv2vDsM4dHMYvMG5X1TnkXDkBl3Vxnfp8oIAAChEQDCJVXS0ZIGjx49Ol/Spzdt2lQS5Mqjc85bNGHC0K13Tv9sSHbZoMoIAAChEQBCz5PUX1LP0aNHF0m6qKqqasY111zzegCPNW1r8bT/Z2Zdw9Cwe6qMFfQyAAAIjQAQeqmShkjqe/XVVxfu3LnzsZ49e94elKqjc86WT5iQbWZfD0uDJpzTy1uqqDICAEBoBIB2wyRlSTpp9OjR/SSdVFlZecuoUaMWB+G146Pi6WfLXF4YFsBxkrbWJnT3uu30KgAADoNHEwBA4MNjb0lfGjly5F3FxcXfSPoBmcUk/T/JQvGHx7jv9K+Pd9GTAAAgNAJAu5Ym6fSRI0f+pri4+GfJOgjnnLdw/PjhvnRWGBrNSdoaS+iO98rpQQAAHCaGpwJAeHiSho8cOfKXlZWVvXr27HlrEuY5pm6ZOf3rnikrDA2WcE4vbanSV+g7AAAQGgGgAwXHAaNHj75Kdfs8jmnL4Ghm1S8M6P8dWTjmMlbGfc39kBVTAQA40jcfAIBwMUk9JP3Xd77znWvaLIQ5F3173LiLZBochkZKOKdXt1ZrUUWMHgMAAKERADpkcMyV9JO2muNoZvHy4mmXKySjVHwnPbOJKiMAAIRGAOjYz+EDR44c+dPi4uLPtOYPcs7ZO5Mn9zNZKKYHJpy0YHu1XiuvoZcAAEBoBIAO/zw+aOTIkb/+05/+1JrDRlO23T75QtVVN0MQGp3+yVxGAAAIjQAASXXDRU+96qqrbmqtH2BmtXL6Zhgaw3fSe5Ux/WtLFT0DAABCIwCgXoakrxQXF3+jpR+4pKQksnDChJOcdHoYGiLhnJ7bsoseAQBAC2HLDQBoH0xSj5EjR46R9PyoUaM2tdQDX3755SnzBuZ9xRT8vRmdpK2xhO4r20GPAACghVBpBID29ZyeP3LkyBtaNI2aVcvXV8PQAAnn9NxmqowAABAaAQAHkirp8uLi4mNa4sGcc5GFEyacLVN+0E/cSapM+LpjbTm9AAAAQiMA4ABMUq+RI0de0yIPZpbYOm3aJZLSg37iCef0Vnk1PQAAAEIjAOAQUlW3KM4xLfNwLhRDU30nPfNxJVcfAABCIwDgEExSz5EjR15xRFHRuejb48ZdJKe8MATG93bF9NI2Ko0AALQ0Vk9tPxKS3jCzM2gKBElpaennCgoKOkva38bzEUnH1IecLvX36SJpEC13xNIkXVpcXDz5sFdS3bgxdfv06V+QBf+1IqG6BXC+x3UHeP/QAa1ateozQ4YMeZ6WQGuxIB2Mcy5D0i2SbuDSNFtc0mwz+wpNgaB56623Uk4++eTY/m5bsWLFUcOGDXuv/kVvxJAhQ+YvXbr0gvz8/DMlnam6vQEzacXDskvSDWY243Af4Pn+/d8zqw/8tudVw8z2vILs9XV94uu2z31k9fdr4tf3+5iNPneSNtXGdfHbH/Ac30Hx/oG+BaB1MTwVQKs7UGCUpIbAKElDhgyZL0kPPfTQs2b2m6VLl/5c0hWSZtUHIDRPqqRLDvNNeN3QVAV/aGrCOb2+nWGpAAAQGgF0GLfccosvSYWFhYtLS0ufWr169a8lfUfSC7ROs0QkHXvXXXed1uzvbBiaGoJpDL6Tnt/MAjgAABAaAXRIRUVFtUOGDFm1atWqp0pLS38paayoOjaVSep89dVXf6HZ39i37y7n64tBP8GEk5ZW1Or17TVcbQAACI0AOrKhQ4fWPPzww4uWL18+XdIYgmOTpUjNC3+7h6ZaGFZNdXphK10BAABCIwCobtjq8OHDNy5btuzvBMcmi0ga9Kc//Wlwk78jJENTnaStsYQe+nAnVxkAAEIjANQxM5efn7+1UXDEoWVcddVVn21yG4dmaCoL4AAAQGgEgIMEx8WLF5dIeogWOaSopHObckfnXOTtcePOCcfQVOn5LSyAAwAAoREADhAcjznmmI+XLFkyVtJaWuSgUlS35+UhlZWVpW6/fcb5CvjQVN9J71XFWAAHAABCIwAcNDj6RUVFyyTdTmscvKkk5RQXFx9zqDvm5eVVOXPBH5oqp1e2VXFlAQAgNALAIdUuXbr0cVFtPJToyJEjTzjYHUpKSiILJ0w4SVJ+kE/ESdqV8HXP+9u5qgAAEBoB4ODMzBUUFGyS9CCtcfDQKOn0g93h8hNPjH48edqnJKUH+UR8Jy2uqOWKAgBAaASAJquV9BjNcFARScMOGsCHDq3x5L4W9BPxndM89mYEAIDQCABNZWaJ0tLS9yS9QWscNDQecNipc84Wjh/f39nBq5HJ5iRtjSf05MesmgoAAKERAJqhsLCwStKLtMSBs7WkLn/6058GH+D26Me3Tz/LpKwgn0TCOS3cyYqpAAAQGgGg+eKSFtAMB3/Ov+qqq47ab6I0i5lzXwj6CfhOeo69GQEAIDQCwOGExnffffd1muGgDjpEVdK5gQ6MkjbWxPVyeTVXEgAAQiMANI+ZueOOO+49SayQcvDn/F77ftE5F3l73LhzJPUNdGh0Tv/Zzt6MAAAQGgHgyKykCQ4oImnovl8sKytL3TZlxvmq25YjwKFRermc0AgAAKERAI5MBU1wQKb9LHSTl5dXJenTgQ6MkjbWxrWARXAAACA0AsAR2kQTHPQ5f6/VUxu22pC5E4J84AnnNG8bVUYAAAiNAHDkNtAEB33O77nP16IfT55+lgK+1YZz0l3vl3MFAQAgNALAkQQLlyGJpTUPbq95i2YWMwv2qqkJJy2trOXKAQBAaAQAtMXzfnFxcc990vZZQT5gX06vsmoqAACERgA4UmZWJekYWuLgz/sjR44cUJcVnbdw/PjhkoYE+YCdk+77cAdXDgAAQiMAtIiuNMHBs7Wk9PqPox/fdsenG30eOA2rpgIAAEIjALSUnjRBE9OjWa2ZBXo+o++c/sPQVAAAkipKEwBoD5xzNmHChH6S8miNZjkz2KFRepmtNgAASCoqjQDai8gNN9xwogI81DJISkpKIvPHjh0hqW9gA6PqhqYuqKzhggEAQGgEgCOWooBXzYLk8hNPjG6bPPN0BXjEie+c5lcQGAEAIDQCQAuoXzn1Alqiie01dGiNmQv80NTXyndxsQAASDLmNAIIPedcdNy4cZ+TlE9rNCc5Brcy6yRtiyf07x3VXCcAAAiNAHCE2ccs7pz7f2I+Y5Ob7K1bb83fPnVmX1kwDzDhnBZW1OgSrhUAAIRGADgSjaqMDE1totMtJfqHnr1PtgC/Bjgnzd9JlREAgCBgTiOAMAdGmzhxYvcxY8bcKKkrLdJkKSYL9HxGJ+nJLZVcKQAACI0AcETSr7/++hsknU5TNF1CLirnzgrs8Tlp6a5aLhQAAIRGADh8zrn08ePHXy/pSjGXsVmyUiNZMg0J6vH5cgxNBQCA0AgARxwYb7jxxht/JCmXFmmWyMlpWUPlghu0nZPeJjQCABAYLIQDIExh0WbMmJEzfvz4H9cHxl60SvND46BINLBVxoatNhZU1nClAAAgNAJAswJjZMKECafccMMNN0g6g8B4eEZEIt7vcvoMDOrxJZzTwkq22gAAgNAIAE0Pi94dd9zRf/z48VfeeOONl0kaLuYwHraIFM0wGxHY6y1pfgVDUwEAIDQCQPPC4hclDRbVxSOWHomaArw9iXNstQEAAKERAA4SFKdMmdInkUicNG7cuIvHjBlTSFhs2SbuFUmtkNQ5iAfnS9pYG+cqAQBAaARAOHTe1KlTe8VisV6e53Vxzh3ted7R48aNGzJmzJgBkrIl5UnKorVatumPSkndFdjQ6JzmV9ToW1wnAAAIjWgVJilv0qRJ36UpEJRgaGZHNQQ/55x5ntfZOTdo3LhxNmbMmHTVzU1MqQ8xner/MV+xlRR6EftFtx6BbV9f0tvMZwQAgNCIVuNJGjZ69Ojf0hQICKsPgZFGn6eI6mHSZJqsvxftFNy/NEgvlO/iQgEAQGhEK75Bz1Td/C8A+ISukVSlmkWCeGy+k9bUxLhIAAAEkEcTAEDHkB0J7t8JfTktqqjhIgEAQGgEACRLnyCHRict2kVoBACA0AgASJqBkZRAHx/zGQEAIDQCAJLkpEhEw6OpgTw25jMCAEBoBAAkWScvqkyzYIZGOS2vYmgqAACERgBA0nT2gjuf0TmptLKWiwQAAKERAJAsvaMBDo2SntxWyUUCAIDQCABIlgEBXQTHSdqWSHCBAAAgNAIAkuUYL6KjI9F4EI/Nd9LyXQxNBQCA0AgASJp0k3pEopFAhkY5La8mNAIAQGgEACRN10iqogrm0qlO0uoqttsAAIDQCABImuxIcBfBkZNe2VHFRQIAgNAIAEhWLOvtRcuDeGC+pI2xOFcIAABCIwAgmaFxeEpqMEOjc1qyq4YrBAAAoREAkCwnRiIuz0sJZDnPSVpezXxGAAAIjQCAZPFTnLZkmfULamgsq2F4KgAAhEYAQLLEMyIpb3lSRiCPzkmv72QRHAAACI0AgKSFxk+nZc4L4oGxCA4AAIRGAEByJU7yoktGpGRkBjI0OqfVzGcEAIDQCABImtqIuScyzAtkaHSSyqg0AgBAaAQAJC2TbZv17rslJh0T1ANcWVXLlQIAgNAIAEiCWkmPDikqWiWpb1AP8oXtu7hSAAAQGgEAbcxJ2irpzvrPhwbxIKsTPlcKAABCIwAgCWolPTp//vyVb/zvbXmSsoJ2gL6kstoEVwoAgJCI0gQA0G40VBmLR4wY4eZ+9qtDPc8Cd5C+c1pVXcPVAgAgJKg0AkD7USvp0Xnz5q2QZBHP6xnUZPt+jEojAACERgBAW2exrZKKzzvvvLikiFww5zM6Setq2KMRAABCIwCgLVVLKq6vMkqS+eY6BfVgX9lRxRUDACAkmNMIAOGXkPS2mf2+4QtmVvVsdv9A7tEoxwUDACBMqDQCQLg5SZsl/e6TN1nXoB2sL2lNLUNTAQAgNAIA2kqNpL+uXbv25f3kycGBS7hO2sQiOAAAhArDUwEgvOKSXjKzMQe4PXCrpzo5ldXEuXIAAIQIlUYACCdf0jpJv/5EMHPOe+vWSfkK4B8GnaQyhqcCAEBoBAC0evbaLOm/582b9/b+ntu3jr99QFAP/KM4w1MBACA0AgBaU7Wk8aWlpU/W78m4l/nz51vEs7SgHvzrO9luAwCAMGFOIwCELzBONLPJB7rDiBEjvOecP1hGYwEAgCNHpREAwhcYf3vQe5WVeXLWK4DH72p9V85lBACA0AgAaL3A+JtD3rN/f/meC94iOE5+je82cSkBACA0AgCSFRglmVmVJwvcHo0y+VWO0AgAAKERAJC0wNjAdy5ww1Od5Cr8xEdcUgAAwoWFcAAgmBq21bjRzP7S3G82WaTuIQJ0Qk6uync7uLQAAIQLlUYACB5f0hJJ15SWlj58mBEtK3gp2Pll1Yn3ubwAAIQLlUYACJYaSX8zs6vXrFmTXlRUVH2YjzM0eKFRbpccmzQCABAyVBoBIBh8SeskXWdmV0vS4MGDq4/g8bKCd4ou8eaOyjVcagAAwoVKIwAkX42k+yTNMrPn2utJOie9vqumgssNAAChEQDQNHFJL0m6y8xKXnjhhfb8nOxkVsklBwAgfBieCgBtLyHpTUm/NLPPrl279h+SdN5558WPOJk5F3l73LhzApgZE865VVx6AADCh0ojALSduKRXJD1uZnc0fPEI5y7uZf78+d728TO7BvHkTcbQVAAACI0AgH04SdslzZH0xOrVq5cMGTJkccdrBvNl/ia6AwAAhEYAQJ24pH9LesXM/nvVqlVDIpFI2ZAhQ6o7aHv45rSebgEAAKERADoqJ2mHpFclLZD0HzN7suHGIUOGdPT5fM6vWyUWAAAQGgGgw4TEnZJWSXpH0qtmdk/Dje18JdRmM8nJidVTAQAgNAJAu5WQtEjS6vqguKpxSFyyZEmnxnduiZVQ21fCdgnztLIuPwIAAEIjAIQ3GC6u//9d1VUSV0v6aPXq1R8NGTLk+QOFxKKiIlYGPWRwtApJnWkJAAAIjQAQBL6kjyQ1XrFzh6Q1+wREJ2mnmd29atWqzzQOhg3WrFmTvu8CNoREAABAaEyOmKQn69/oAcChJMzs9uZ8w4oVK46SpGHDhr3X8LWGquH+AqPUsvsotrYRI0YkZvuuNNVs9F4DQRt/7OqSsqw+MkuSJ3n7u6/tuYvcntvMqdE37Pm628/P8iQ5U60f81dLSpU0mq7bbL6ktTQD7x/oWwA6POecbdiwIYOWAIAjeC59662UgD7HR98K6LGFwb5DosH7B/oWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgI7m/wNweewxPAPbbgAAAABJRU5ErkJggg=="
+         alt="Bay Area Taekwondo Festival"
+         style="max-width:320px;width:80%;height:auto;display:block;filter:drop-shadow(0 2px 16px rgba(224,43,43,0.35))"
+    />
+    </a>
+  </div>
   <div class="hero-meta">
-    <div class="hero-meta-item">
-      <span class="label">Date</span>
-      <span class="value">October 18–19, 2026</span>
-    </div>
-    <div class="hero-meta-sep"></div>
-    <div class="hero-meta-item">
-      <span class="label">Venue</span>
-      <span class="value">National Sports Arena, Dublin</span>
-    </div>
-    <div class="hero-meta-sep"></div>
-    <div class="hero-meta-item">
-      <span class="label">Registration Deadline</span>
-      <span class="value">September 30, 2026</span>
-    </div>
+    <span>📅 <strong>April 18th, 2026</strong> · Starts 9 AM</span>
+    <span>📍 <strong>Merrill F West High School</strong></span>
+    <span>1775 W Lowell Ave, Tracy, CA 95376</span>
   </div>
-  <div id="late-fee-banner">
-    <p>&#9888; Late Registration — Additional €10 fee applies</p>
-  </div>
-</section>
-
-<!-- MAIN FORM -->
-<div id="main-content">
-  <form id="reg-form" novalidate>
-
-    <!-- SUCCESS SCREEN -->
-    <div id="success-screen">
-      <span class="success-check">&#9989;</span>
-      <div class="success-title">REGISTRATION RECEIVED</div>
-      <p class="success-sub">Your entry has been confirmed</p>
-      <div style="display:flex; justify-content:center;">
-        <div class="success-details">
-          <div class="success-row">
-            <span class="success-row-label">Reference</span>
-            <span class="success-row-value" id="success-ref">—</span>
-          </div>
-          <div class="success-row">
-            <span class="success-row-label">Total Fee</span>
-            <span class="success-row-value red" id="success-total">—</span>
-          </div>
-          <div class="success-row">
-            <span class="success-row-label">Email</span>
-            <span class="success-row-value" id="success-email" style="font-size:14px; font-family:var(--font-body);">—</span>
-          </div>
-        </div>
-      </div>
-      <p class="success-note">A confirmation email has been sent to your registered address. Please check your spam folder if you do not receive it within 10 minutes.</p>
-    </div>
-
-    <!-- FORM BODY -->
-    <div id="form-body">
-
-      <!-- SECTION 1: COMPETITOR INFO -->
-      <div id="form-section">
-        <div class="section-label">
-          <span class="section-label-text">Competitor Info</span>
-          <span class="section-label-num">01 / 03</span>
-        </div>
-        <div class="card">
-          <div class="form-grid">
-
-            <div class="field">
-              <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="firstName" placeholder="John" autocomplete="given-name">
-              <span class="err-msg">First name is required</span>
-            </div>
-
-            <div class="field">
-              <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="lastName" placeholder="Smith" autocomplete="family-name">
-              <span class="err-msg">Last name is required</span>
-            </div>
-
-            <div class="field">
-              <label for="dob">Date of Birth</label>
-              <input type="date" id="dob" name="dob">
-              <span class="err-msg">Date of birth is required</span>
-            </div>
-
-            <div class="field">
-              <label for="gender">Gender</label>
-              <select id="gender" name="gender">
-                <option value="">Select…</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Non-binary</option>
-                <option>Prefer not to say</option>
-              </select>
-              <span class="err-msg">Please select a gender</span>
-            </div>
-
-            <div class="field">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email">
-              <span class="err-msg">Valid email address required</span>
-            </div>
-
-            <div class="field">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+353 87 123 4567" autocomplete="tel">
-              <span class="err-msg">Phone number is required</span>
-            </div>
-
-            <div class="field">
-              <label for="nationality">Nationality</label>
-              <input type="text" id="nationality" name="nationality" placeholder="Irish">
-              <span class="err-msg">Nationality is required</span>
-            </div>
-
-            <div class="field">
-              <label for="club">Club Name</label>
-              <input type="text" id="club" name="club" placeholder="Dragon TKD Club">
-              <span class="err-msg">Club name is required</span>
-            </div>
-
-            <div class="field">
-              <label for="coach">Coach Name</label>
-              <input type="text" id="coach" name="coach" placeholder="Master Kim">
-              <span class="err-msg"></span>
-            </div>
-
-            <div class="field">
-              <label for="belt">Belt Grade</label>
-              <select id="belt" name="belt">
-                <option value="">Select belt…</option>
-                <optgroup label="Colour Belts">
-                  <option>White Belt (10th Gup)</option>
-                  <option>Yellow Belt (9th Gup)</option>
-                  <option>Orange Belt (8th Gup)</option>
-                  <option>Green Belt (7th Gup)</option>
-                  <option>Blue Belt (6th Gup)</option>
-                  <option>Blue Stripe (5th Gup)</option>
-                  <option>Red Belt (4th Gup)</option>
-                  <option>Red Stripe (3rd Gup)</option>
-                  <option>Brown Belt (2nd Gup)</option>
-                  <option>Brown Stripe (1st Gup)</option>
-                </optgroup>
-                <optgroup label="Black Belts">
-                  <option>1st Dan Black Belt</option>
-                  <option>2nd Dan Black Belt</option>
-                  <option>3rd Dan Black Belt</option>
-                  <option>4th Dan Black Belt</option>
-                  <option>5th Dan + Black Belt</option>
-                </optgroup>
-              </select>
-              <span class="err-msg">Belt grade is required</span>
-            </div>
-
-            <div class="field full">
-              <label for="weight">Current Weight (kg)</label>
-              <input type="number" id="weight" name="weight" placeholder="68" min="20" max="200" step="0.1">
-              <span class="err-msg">Current weight in kg is required</span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="section-divider"></div>
-
-      <!-- SECTION 2: COMPETITION EVENTS -->
-      <div class="section-label">
-        <span class="section-label-text">Competition Events</span>
-        <span class="section-label-num">02 / 03</span>
-      </div>
-      <div class="card">
-
-        <div class="events-grid">
-
-          <div class="event-toggle">
-            <input type="checkbox" id="evt-kyorugi" name="events" value="kyorugi">
-            <label for="evt-kyorugi">
-              <span class="event-icon">&#x1F94B;</span>
-              <span class="event-name">KYORUGI</span>
-              <span class="event-sub">Sparring</span>
-              <span class="event-price">€40</span>
-            </label>
-          </div>
-
-          <div class="event-toggle">
-            <input type="checkbox" id="evt-poomsae" name="events" value="poomsae">
-            <label for="evt-poomsae">
-              <span class="event-icon">&#x1F3C6;</span>
-              <span class="event-name">POOMSAE</span>
-              <span class="event-sub">Forms</span>
-              <span class="event-price">€40</span>
-            </label>
-          </div>
-
-          <div class="event-toggle">
-            <input type="checkbox" id="evt-team" name="events" value="team">
-            <label for="evt-team">
-              <span class="event-icon">&#x1F3AF;</span>
-              <span class="event-name">TEAM POOMSAE</span>
-              <span class="event-sub">Team Forms</span>
-              <span class="event-price">€25</span>
-            </label>
-          </div>
-
-        </div>
-
-        <div class="bundle-note">
-          &#x1F4A1; Bundle deal: Kyorugi + Poomsae together = <strong>€65</strong> (save €15)
-        </div>
-
-        <!-- Weight class (shown when Kyorugi selected) -->
-        <div id="weight-class-row" class="field">
-          <label for="weight-class">Weight Class</label>
-          <select id="weight-class" name="weightClass">
-            <option value="">Select weight class…</option>
-          </select>
-          <span class="err-msg">Weight class is required for Kyorugi</span>
-        </div>
-
-        <!-- Fee panel -->
-        <div id="fee-panel">
-          <div id="fee-breakdown">
-            <p class="fee-empty" id="fee-empty-msg">No events selected</p>
-          </div>
-          <div id="fee-total-box">
-            <span class="total-label">Total</span>
-            <span id="fee-total">€0</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="section-divider"></div>
-
-      <!-- SECTION 3: MEDICAL & WAIVER -->
-      <div class="section-label">
-        <span class="section-label-text">Medical &amp; Waiver</span>
-        <span class="section-label-num">03 / 03</span>
-      </div>
-      <div class="card">
-
-        <div class="waiver-box">
-          <strong>LIABILITY WAIVER AND RELEASE OF CLAIMS</strong><br><br>
-          By registering for Dragon Cup Championship 2026 ("the Event"), the participant (or parent/guardian if under 18) acknowledges and agrees to the following terms and conditions:<br><br>
-          <strong>1. Assumption of Risk.</strong> Participation in martial arts competitions involves inherent risks of physical injury, including but not limited to bruising, sprains, fractures, and in rare cases, more serious injuries. The participant voluntarily accepts all such risks.<br><br>
-          <strong>2. Medical Fitness.</strong> The participant declares that they are in good physical condition and medically fit to compete. Any pre-existing medical conditions have been disclosed to their coach and treating physician.<br><br>
-          <strong>3. Release of Liability.</strong> The participant releases, waives, discharges, and holds harmless Dragon Cup Championship, its organisers, officials, volunteers, sponsors, and venue owners from any and all liability, claims, demands, or causes of action arising out of or in connection with participation in the Event, including but not limited to those caused by negligence.<br><br>
-          <strong>4. Media Consent.</strong> The participant grants permission for photographs and video recordings taken during the Event to be used for promotional purposes by the organisers without compensation.<br><br>
-          <strong>5. Rules Compliance.</strong> The participant agrees to abide by the rules and regulations of World Taekwondo (WT) and the Dragon Cup Championship, including any decisions made by referees and officials, which shall be final.<br><br>
-          <strong>6. Data Protection.</strong> Personal data collected during registration will be processed in accordance with applicable data protection law (GDPR) and used solely for the administration of the Event.
-        </div>
-
-        <label class="checkbox-field">
-          <input type="checkbox" id="waiver-accept" name="waiverAccept">
-          <span class="check-label">I have read and fully accept the liability waiver and release of claims above</span>
-        </label>
-
-        <label class="checkbox-field">
-          <input type="checkbox" id="medically-fit" name="medicallyFit">
-          <span class="check-label">I confirm that the athlete is in good physical health and medically fit to compete</span>
-        </label>
-
-        <!-- Under-18 toggle -->
-        <label class="checkbox-field" style="margin-top: 8px;">
-          <input type="checkbox" id="under18-toggle" name="under18">
-          <span class="check-label">Athlete is under 18 years of age — Guardian consent required</span>
-        </label>
-
-        <div id="guardian-fields">
-          <div class="section-label" style="margin-bottom: 12px;">
-            <span class="section-label-text" style="font-size: 14px;">Guardian Details</span>
-          </div>
-          <div class="form-grid">
-            <div class="field">
-              <label for="guardian-name">Guardian Full Name</label>
-              <input type="text" id="guardian-name" name="guardianName" placeholder="Jane Smith">
-              <span class="err-msg">Guardian name is required for under-18 athletes</span>
-            </div>
-            <div class="field">
-              <label for="guardian-email">Guardian Email</label>
-              <input type="email" id="guardian-email" name="guardianEmail" placeholder="parent@example.com">
-              <span class="err-msg">Valid guardian email is required</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- SUBMIT -->
-      <button type="submit" id="submit-btn">SUBMIT REGISTRATION</button>
-
-    </div><!-- /form-body -->
-  </form>
 </div>
 
+<!-- ── LATE FEE BANNER ──────────────────────────────────────────── -->
+<div id="late-banner">
+  ⚠️ Registration after April 11, 2026 incurs a <strong>$20 late fee</strong>.
+</div>
+
+<!-- ── MAIN ─────────────────────────────────────────────────────── -->
+<div class="wrapper">
+
+  <!-- Step indicators -->
+  <div class="steps">
+    <div class="step active" id="step-ind-1">
+      <div class="step-dot">1</div>
+      <div class="step-label">Competitor</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step" id="step-ind-2">
+      <div class="step-dot">2</div>
+      <div class="step-label">Events</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step" id="step-ind-3">
+      <div class="step-dot">3</div>
+      <div class="step-label">Waiver</div>
+    </div>
+  </div>
+
+  <!-- ── SUCCESS SCREEN (hidden until submit) ──────────────────── -->
+  <div id="success-screen">
+    <span class="success-icon">🥋</span>
+    <h2>You're Registered!</h2>
+    <p id="success-name"></p>
+    <div class="total-confirm" id="success-fee"></div>
+    <p style="margin-top:8px;">Please bring <strong style="color:var(--text)">cash or check</strong> made payable to <strong style="color:var(--text)">Alpha Martial Arts</strong> on competition day.</p>
+    <p style="margin-top:24px;font-size:12px;">📅 April 18, 2026 · Merrill F West High School · Tracy, CA</p>
+  </div>
+
+  <!-- ── FORM ──────────────────────────────────────────────────── -->
+  <div id="reg-form">
+
+    <!-- SECTION 1: Competitor Info -->
+    <div class="section-label">01 — Competitor Information</div>
+
+    <div class="card">
+      <div class="grid grid-3">
+        <div class="field">
+          <label>Last Name <span class="req">*</span></label>
+          <input type="text" id="lastName" placeholder="Smith" required>
+          <div class="error-msg" id="err-lastName">Required</div>
+        </div>
+        <div class="field">
+          <label>First Name <span class="req">*</span></label>
+          <input type="text" id="firstName" placeholder="Alex" required>
+          <div class="error-msg" id="err-firstName">Required</div>
+        </div>
+        <div class="field">
+          <label>Middle Initial</label>
+          <input type="text" id="middleInitial" placeholder="J" maxlength="2">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="field" style="margin-bottom:16px">
+        <label>Home Address <span class="req">*</span></label>
+        <input type="text" id="homeAddress" placeholder="123 Main Street" required>
+        <div class="error-msg" id="err-homeAddress">Required</div>
+      </div>
+      <div class="grid grid-city">
+        <div class="field">
+          <label>City <span class="req">*</span></label>
+          <input type="text" id="city" placeholder="Oakland" required>
+          <div class="error-msg" id="err-city">Required</div>
+        </div>
+        <div class="field">
+          <label>State <span class="req">*</span></label>
+          <input type="text" id="state" placeholder="CA" maxlength="2">
+          <div class="error-msg" id="err-state">Required</div>
+        </div>
+        <div class="field">
+          <label>Zip Code <span class="req">*</span></label>
+          <input type="text" id="zipCode" placeholder="94601" maxlength="10">
+          <div class="error-msg" id="err-zipCode">Required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="grid grid-2">
+        <div class="field">
+          <label>Phone <span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="(510) 555-0000" required>
+          <div class="error-msg" id="err-phone">Required</div>
+        </div>
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="alex@email.com" required>
+          <div class="error-msg" id="err-email">Required</div>
+        </div>
+      </div>
+      <div class="field" style="margin-top:16px">
+        <label>TKD School <span class="req">*</span></label>
+        <select id="tkdSchool" required onchange="toggleOtherSchool(this.value)">
+          <option value="">— Select your school —</option>
+          <option>Alpha Martial Arts</option>
+          <option>Black Tiger Tae Kwon Do</option>
+          <option>Dae Han Martial Arts</option>
+          <option>Han Martial Arts</option>
+          <option>Jisung Taekwondo</option>
+          <option>Monterey Bay Taekwondo</option>
+          <option>Na Martial Arts</option>
+          <option>Pinnacle Taekwondo</option>
+          <option value="other">Other…</option>
+        </select>
+        <input type="text" id="tkdSchoolOther" placeholder="Enter your school name"
+               style="display:none; margin-top:8px">
+        <div class="error-msg" id="err-tkdSchool">Required</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Competitor Profile -->
+    <div class="section-label">02 — Competitor Profile</div>
+
+    <div class="card">
+      <div class="grid grid-2" style="margin-bottom:16px">
+        <div class="field">
+          <label>Gender <span class="req">*</span></label>
+          <select id="gender" required>
+            <option value="">— Select —</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary / Other</option>
+            <option>Prefer not to say</option>
+          </select>
+          <div class="error-msg" id="err-gender">Required</div>
+        </div>
+        <div class="field">
+          <label>Date of Birth <span class="req">*</span></label>
+          <input type="date" id="dob" required>
+          <div class="error-msg" id="err-dob">Required</div>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div class="field">
+          <label>Weight (LB) <span class="req">*</span></label>
+          <input type="number" id="weight" placeholder="130" min="30" max="400" required>
+          <div class="error-msg" id="err-weight">Required</div>
+        </div>
+        <div class="field">
+          <label>Height (in) <span class="req">*</span></label>
+          <input type="number" id="height" placeholder="64" min="24" max="96" required>
+          <div class="error-msg" id="err-height">Required</div>
+        </div>
+        <div class="field">
+          <label>Belt / Form No. <span class="req">*</span></label>
+          <select id="beltFormNo" disabled style="opacity:.45;cursor:not-allowed">
+            <option value="">— Select school first —</option>
+          </select>
+          <div class="error-msg" id="err-beltFormNo">Please select a belt rank</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Events -->
+    <div class="section-label" id="section-events">03 — Events</div>
+
+    <div class="card">
+      <p style="font-size:13px;color:var(--sub);margin-bottom:14px">Select one or more events. Fee is calculated automatically.</p>
+
+      <div class="events-grid">
+        <input type="checkbox" class="event-check" id="ev-form"     name="events" value="Form">
+        <label for="ev-form" class="event-label">
+          <span class="evt-icon">🥋</span>Form (Poomsae)
+        </label>
+
+        <input type="checkbox" class="event-check" id="ev-board"    name="events" value="Board Breaking">
+        <label for="ev-board" class="event-label">
+          <span class="evt-icon">🪵</span>Board Breaking
+        </label>
+
+        <input type="checkbox" class="event-check" id="ev-speed"    name="events" value="Speed Kicking">
+        <label for="ev-speed" class="event-label">
+          <span class="evt-icon">⚡</span>Speed Kicking
+        </label>
+
+        <input type="checkbox" class="event-check" id="ev-sparring" name="events" value="Sparring">
+        <label for="ev-sparring" class="event-label">
+          <span class="evt-icon">🥊</span>Sparring
+        </label>
+      </div>
+
+      <div class="error-msg" id="err-events" style="display:none;margin-top:10px">Please select at least one event.</div>
+
+      <!-- Fee display -->
+      <div class="fee-display">
+        <div class="fee-rows">
+          <div class="fee-row"><span>Base registration</span><span id="fee-base">—</span></div>
+          <div class="fee-row" id="late-fee-row" style="display:none"><span>Late fee</span><span id="fee-late">+ $20</span></div>
+          <div class="fee-row" style="font-size:11px;color:var(--muted)">
+            <span>$100 / $120 / $140 / $160 for 1–4 events</span>
+          </div>
+        </div>
+        <div>
+          <div class="fee-total" id="fee-total">$0</div>
+          <small>due on competition day</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Waiver -->
+    <div class="section-label">04 — Liability Waiver</div>
+
+    <div class="card">
+      <div class="waiver-box">
+        <strong style="color:var(--text)">LIABILITY RELEASE AND INDEMNITY</strong><br><br>
+        I Liability Waiver: In consideration of your acceptance of my entry, I do hereby, for myself, my heirs, executors, and administrators waive, release forever discharge any and all rights and claims for damages, which I may have or may accrue to me against Han Martial Arts, Jisung Taekwondo, Pinnacle Taekwondo, Dae Han Martial Arts, Black Tiger Tae Kwon Do, Na Martial Arts, Monterey Bay Taekwondo, Alpha Martial Arts, and all members of the festival, or their respective officers, agents, representatives, successors, and/or assigns, and against any of my competitors for any and all damages which may be sustained by me in connection with my association or entry in the above athletic meet and competition, and in connection with any medical services I may be provided in connection with any such injury or illness, or which may arise out of traveling to, participating in, and returning from this athletic meet. I understand that Taekwondo is a body contact sport, and I further understand all contents of the 2025 rules and regulations and general information which was published by the sponsors and I agree with them in their entirety. I further understand that I may be dismissed from the premises without compensation or refund if my conduct is not courteous and cooperative for the successful operation of the championships. I hereby agree to all terms and conditions of the liability waiver above.
+      </div>
+
+      <label class="waiver-check-row" id="waiver-row">
+        <input type="checkbox" id="agreedToWaiver" required>
+        <span>I have read and agree to the Liability Release and Indemnity above. <span class="req">*</span></span>
+      </label>
+      <div class="error-msg" id="err-waiver">You must agree to the waiver to register.</div>
+
+      <!-- Under 18 toggle -->
+      <div style="margin-top:20px;">
+        <label class="under18-check-row">
+          <input type="checkbox" id="isUnder18" onchange="toggleGuardian(this.checked)">
+          <span>Competitor is under 18 — parent/guardian signature required</span>
+        </label>
+      </div>
+
+      <div id="guardian-section">
+        <div class="field" style="margin-top:12px">
+          <label>Parent / Guardian Full Name <span class="req">*</span></label>
+          <input type="text" id="guardianName" placeholder="Parent or guardian name">
+          <div class="error-msg" id="err-guardianName">Required for competitors under 18</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">
+      Submit Registration
+    </button>
+
+    <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:16px">
+      Cash or check payable to <strong style="color:var(--sub)">Alpha Martial Arts</strong> on competition day.<br>
+      Questions? Contact your TKD school or tournament organizer.
+    </p>
+
+  </div><!-- /#reg-form -->
+</div><!-- /.wrapper -->
+
 <script>
-(function() {
 
-  // ── LATE FEE BANNER ──
-  const lateFeeDate = new Date('2026-09-15');
-  if (new Date() > lateFeeDate) {
-    document.getElementById('late-fee-banner').classList.add('visible');
+// ── Logo back-link: resolve real deployment URL ────────────────
+google.script.run
+  .withSuccessHandler(function(url) {
+    document.getElementById('logo-back-link').href = 'website.html';
+  })
+  .getScriptUrl();
+
+// ── Late fee detection ─────────────────────────────────────────
+const DEADLINE = new Date('2026-04-11T23:59:59');
+const isLate   = new Date() > DEADLINE;
+
+if (isLate) {
+  document.getElementById('late-banner').style.display = 'block';
+  document.getElementById('late-fee-row').style.display = 'flex';
+}
+
+// ── Fee map ────────────────────────────────────────────────────
+const FEE_MAP = { 0:0, 1:100, 2:120, 3:140, 4:160 };
+
+function updateFee() {
+  const checked = [...document.querySelectorAll('.event-check:checked')];
+  const n       = checked.length;
+  const base    = FEE_MAP[Math.min(n,4)] || 0;
+  const late    = isLate ? 20 : 0;
+  const total   = base + late;
+
+  document.getElementById('fee-base').textContent = n > 0 ? `$${base}` : '—';
+  document.getElementById('fee-total').textContent = n > 0 ? `$${total}` : '$0';
+
+  // Update step indicator
+  if (n > 0) markStep(2);
+}
+
+document.querySelectorAll('.event-check').forEach(cb => {
+  cb.addEventListener('change', updateFee);
+});
+
+// ── Step indicator helpers ─────────────────────────────────────
+function markStep(n) {
+  for (let i = 1; i < n; i++) {
+    const el = document.getElementById(`step-ind-${i}`);
+    el.classList.remove('active');
+    el.classList.add('done');
+    el.querySelector('.step-dot').textContent = '✓';
+  }
+  const cur = document.getElementById(`step-ind-${n}`);
+  if (cur) cur.classList.add('active');
+}
+
+// Scroll-based step activation
+const sections = [
+  { el: document.getElementById('lastName'),        step: 1 },
+  { el: document.getElementById('section-events'),  step: 2 },
+  { el: document.getElementById('waiver-row'),      step: 3 },
+];
+
+
+// ── Belt data per school ──────────────────────────────────────
+const SCHOOL_BELTS = {
+  'Alpha Martial Arts': [
+    {belt:'White',level:0},{belt:'Orange',level:1},{belt:'Yellow',level:2},
+    {belt:'Green',level:3},{belt:'Blue',level:4},{belt:'Purple',level:5},
+    {belt:'Red',level:6},{belt:'Adv. Red',level:7},{belt:'Double Black Stripe',level:8},
+    {belt:'Black',level:9}
+  ],
+  'Black Tiger Tae Kwon Do': [
+    {belt:'White',level:0},{belt:'Orange',level:1},{belt:'Yellow',level:2},
+    {belt:'Green',level:3},{belt:'Blue',level:4},{belt:'Camo',level:5},
+    {belt:'Purple',level:6},{belt:'Red',level:7},{belt:'Brown',level:8},
+    {belt:'Poom',level:8},{belt:'Black',level:9}
+  ],
+  'Dae Han Martial Arts': [
+    {belt:'White',level:0},{belt:'Yellow',level:1},{belt:'Orange',level:2},
+    {belt:'Green',level:3},{belt:'Purple',level:4},{belt:'Blue',level:5},
+    {belt:'Red',level:6},{belt:'Brown',level:7},{belt:'Poom',level:8},
+    {belt:'Black',level:9}
+  ],
+  'Han Martial Arts': [
+    {belt:'White',level:0},{belt:'Yellow',level:1},{belt:'Int./Adv. Yellow',level:2},
+    {belt:'Green',level:3},{belt:'Int./Adv. Green',level:4},{belt:'Blue',level:5},
+    {belt:'Adv. Blue',level:6},{belt:'Red',level:7},{belt:'Adv. Red',level:8},
+    {belt:'Half Black',level:8},{belt:'Black',level:9}
+  ],
+  'Monterey Bay Taekwondo': [
+    {belt:'White',level:0},{belt:'Yellow',level:1},{belt:'Orange',level:2},
+    {belt:'Purple',level:3},{belt:'Green',level:4},{belt:'Blue',level:5},
+    {belt:'Brown',level:6},{belt:'Red',level:7},{belt:'Poom',level:8},
+    {belt:'Black',level:9}
+  ],
+  'Na Martial Arts': [
+    {belt:'White',level:0},{belt:'Yellow',level:1},{belt:'Adv. Yellow',level:2},
+    {belt:'Green',level:3},{belt:'Adv. Green',level:4},{belt:'Blue',level:5},
+    {belt:'Adv. Blue',level:6},{belt:'Red',level:7},{belt:'Adv. Red',level:8},
+    {belt:'Half Black',level:8},{belt:'Black',level:9}
+  ],
+  'Pinnacle Taekwondo': [
+    {belt:'White',level:0},{belt:'Yellow',level:1},{belt:'Adv. Yellow',level:2},
+    {belt:'Green',level:3},{belt:'Adv. Green',level:4},{belt:'Blue',level:5},
+    {belt:'Adv. Blue',level:6},{belt:'Red',level:7},{belt:'Adv. Red',level:8},
+    {belt:'Poom',level:8},{belt:'Black',level:9}
+  ],
+};
+
+function updateBeltDropdown(schoolVal) {
+  const sel = document.getElementById('beltFormNo');
+  const data = SCHOOL_BELTS[schoolVal];
+  sel.innerHTML = '';
+
+  if (!data) {
+    sel.innerHTML = '<option value="">— Select school first —</option>';
+    sel.disabled = true;
+    sel.style.opacity = '.45';
+    sel.style.cursor  = 'not-allowed';
+    return;
   }
 
-  // ── EVENT PRICING ──
-  const EVENT_PRICES = { kyorugi: 40, poomsae: 40, team: 25 };
-  const BUNDLE_DISCOUNT = 15;
+  sel.innerHTML = '<option value="">— Select belt —</option>' +
+    data.map(d => `<option value="${d.belt} (Lv.${d.level})">${d.belt} — Division Level ${d.level}</option>`).join('');
+  sel.disabled = false;
+  sel.style.opacity = '1';
+  sel.style.cursor  = 'pointer';
+}
 
-  const chkKyorugi    = document.getElementById('evt-kyorugi');
-  const chkPoomsae    = document.getElementById('evt-poomsae');
-  const chkTeam       = document.getElementById('evt-team');
-  const weightClassRow = document.getElementById('weight-class-row');
-  const weightClassSel = document.getElementById('weight-class');
-  const feeBreakdown  = document.getElementById('fee-breakdown');
-  const feeTotalEl    = document.getElementById('fee-total');
-  let currentTotal    = 0;
+// Hook into existing school change
+document.getElementById('tkdSchool').addEventListener('change', function() {
+  const val = this.value === 'other' ? '' : this.value;
+  updateBeltDropdown(val);
+});
 
-  function getAge() {
-    const dob = document.getElementById('dob').value;
-    if (!dob) return null;
-    const diff = Date.now() - new Date(dob).getTime();
-    return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-  }
+// ── Other school toggle ────────────────────────────────────────
+function toggleOtherSchool(val) {
+  const other = document.getElementById('tkdSchoolOther');
+  other.style.display = val === 'other' ? 'block' : 'none';
+  if (val !== 'other') other.value = '';
+}
 
-  function updateWeightClasses() {
-    const age = getAge();
-    weightClassSel.innerHTML = '';
-    const placeholder = document.createElement('option');
-    placeholder.value = '';
-    placeholder.textContent = 'Select weight class…';
-    weightClassSel.appendChild(placeholder);
+// ── Guardian toggle ────────────────────────────────────────────
+function toggleGuardian(show) {
+  document.getElementById('guardian-section').style.display = show ? 'block' : 'none';
+}
 
-    let classes = [];
-    if (age !== null && age < 12) {
-      classes = ['Under 25kg','25–30kg','30–35kg','35–40kg','40–45kg','45+kg'];
-    } else if (age !== null && age < 15) {
-      classes = ['Under 33kg','33–37kg','37–41kg','41–45kg','45–49kg','49–53kg','53–57kg','57–61kg','61–65kg','65+kg'];
-    } else if (age !== null && age < 18) {
-      classes = ['Under 45kg','45–48kg','48–51kg','51–55kg','55–59kg','59–63kg','63–68kg','68–73kg','73–78kg','78+kg'];
-    } else {
-      classes = ['Under 54kg','54–58kg','58–63kg','63–68kg','68–74kg','74–80kg','80–87kg','87+kg'];
-    }
+// ── Validation ─────────────────────────────────────────────────
+const REQUIRED_FIELDS = [
+  'lastName','firstName','homeAddress','city','state',
+  'zipCode','phone','email','tkdSchool','beltFormNo',
+  'gender','dob','weight','height'
+];
 
-    classes.forEach(function(cls) {
-      const opt = document.createElement('option');
-      opt.value = cls;
-      opt.textContent = cls;
-      weightClassSel.appendChild(opt);
-    });
-  }
+function showErr(id, show) {
+  const el = document.getElementById('err-' + id);
+  if (el) el.style.display = show ? 'block' : 'none';
+  const inp = document.getElementById(id);
+  if (inp) inp.style.borderColor = show ? '#f87171' : '';
+}
 
-  function updateFee() {
-    const kyorugi = chkKyorugi.checked;
-    const poomsae = chkPoomsae.checked;
-    const team    = chkTeam.checked;
-    const bundle  = kyorugi && poomsae;
+function validate() {
+  let ok = true;
 
-    const rows = [];
-    let total = 0;
-
-    if (kyorugi) {
-      rows.push({ label: 'Kyorugi (Sparring)', amount: EVENT_PRICES.kyorugi, discount: false });
-      total += EVENT_PRICES.kyorugi;
-    }
-    if (poomsae) {
-      rows.push({ label: 'Poomsae (Forms)', amount: EVENT_PRICES.poomsae, discount: false });
-      total += EVENT_PRICES.poomsae;
-    }
-    if (bundle) {
-      rows.push({ label: 'Bundle Discount', amount: BUNDLE_DISCOUNT, discount: true });
-      total -= BUNDLE_DISCOUNT;
-    }
-    if (team) {
-      rows.push({ label: 'Team Poomsae', amount: EVENT_PRICES.team, discount: false });
-      total += EVENT_PRICES.team;
-    }
-
-    currentTotal = total;
-
-    // Weight class visibility
-    if (kyorugi) {
-      weightClassRow.classList.add('visible');
-      updateWeightClasses();
-    } else {
-      weightClassRow.classList.remove('visible');
-    }
-
-    // Render breakdown
-    feeBreakdown.innerHTML = '';
-    if (rows.length === 0) {
-      const p = document.createElement('p');
-      p.className = 'fee-empty';
-      p.textContent = 'No events selected';
-      feeBreakdown.appendChild(p);
-    } else {
-      rows.forEach(function(r) {
-        const div = document.createElement('div');
-        div.className = 'fee-row' + (r.discount ? ' discount' : '');
-        const lbl = document.createElement('span');
-        lbl.className = 'fee-label';
-        lbl.textContent = r.label;
-        const amt = document.createElement('span');
-        amt.className = 'fee-amount';
-        amt.textContent = (r.discount ? '−' : '') + '€' + r.amount;
-        div.appendChild(lbl);
-        div.appendChild(amt);
-        feeBreakdown.appendChild(div);
-      });
-    }
-
-    feeTotalEl.textContent = '€' + total;
-  }
-
-  [chkKyorugi, chkPoomsae, chkTeam].forEach(function(c) {
-    c.addEventListener('change', updateFee);
+  REQUIRED_FIELDS.forEach(id => {
+    const v = (document.getElementById(id)?.value || '').trim();
+    if (!v) { showErr(id, true); ok = false; }
+    else      showErr(id, false);
   });
-  document.getElementById('dob').addEventListener('change', function() {
-    updateFee();
-    checkUnder18Auto();
-  });
-  document.getElementById('weight').addEventListener('input', updateFee);
 
-  // ── UNDER-18 TOGGLE ──
-  const under18Toggle  = document.getElementById('under18-toggle');
-  const guardianFields = document.getElementById('guardian-fields');
-
-  function checkUnder18Auto() {
-    const age = getAge();
-    if (age !== null && age < 18) {
-      under18Toggle.checked = true;
-      guardianFields.classList.add('visible');
-    }
+  // If "Other" school selected, require the text field
+  if (document.getElementById('tkdSchool').value === 'other') {
+    const ov = (document.getElementById('tkdSchoolOther').value || '').trim();
+    if (!ov) { showErr('tkdSchool', true); ok = false; }
   }
 
-  under18Toggle.addEventListener('change', function() {
-    guardianFields.classList.toggle('visible', this.checked);
-  });
+  // Events
+  const evts = [...document.querySelectorAll('.event-check:checked')];
+  const evErr = document.getElementById('err-events');
+  if (evts.length === 0) { evErr.style.display = 'block'; ok = false; }
+  else                     evErr.style.display = 'none';
 
-  // ── VALIDATION HELPERS ──
-  function setFieldError(fieldEl, msg) {
-    const wrapper = fieldEl.closest('.field');
-    if (!wrapper) return;
-    wrapper.classList.add('has-error');
-    fieldEl.classList.add('error');
-    const errEl = wrapper.querySelector('.err-msg');
-    if (errEl && msg) errEl.textContent = msg;
+  // Waiver
+  const waiverErr = document.getElementById('err-waiver');
+  if (!document.getElementById('agreedToWaiver').checked) {
+    waiverErr.style.display = 'block'; ok = false;
+  } else {
+    waiverErr.style.display = 'none';
   }
 
-  function clearAllErrors() {
-    document.querySelectorAll('.has-error').forEach(function(el) {
-      el.classList.remove('has-error');
-    });
-    document.querySelectorAll('.error').forEach(function(el) {
-      el.classList.remove('error');
-    });
+  // Guardian
+  if (document.getElementById('isUnder18').checked) {
+    const gn = (document.getElementById('guardianName')?.value || '').trim();
+    if (!gn) { showErr('guardianName', true); ok = false; }
+    else       showErr('guardianName', false);
   }
 
-  function validateForm() {
-    clearAllErrors();
-    let valid = true;
-    let firstError = null;
+  return ok;
+}
 
-    function flag(id, msg) {
-      const el = document.getElementById(id);
-      if (!el.value || !el.value.trim()) {
-        setFieldError(el, msg);
-        if (!firstError) firstError = el;
-        valid = false;
+// ── Submit ─────────────────────────────────────────────────────
+function handleSubmit() {
+  if (!validate()) {
+    // Scroll to first error
+    const first = document.querySelector('[style*="border-color: rgb(248, 113, 113)"]');
+    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Submitting…';
+
+  const events = [...document.querySelectorAll('.event-check:checked')].map(c => c.value);
+  const n      = events.length;
+  const total  = (FEE_MAP[Math.min(n,4)] || 0) + (isLate ? 20 : 0);
+
+  const data = {
+    lastName:       document.getElementById('lastName').value.trim(),
+    firstName:      document.getElementById('firstName').value.trim(),
+    middleInitial:  document.getElementById('middleInitial').value.trim(),
+    homeAddress:    document.getElementById('homeAddress').value.trim(),
+    city:           document.getElementById('city').value.trim(),
+    state:          document.getElementById('state').value.trim(),
+    zipCode:        document.getElementById('zipCode').value.trim(),
+    phone:          document.getElementById('phone').value.trim(),
+    email:          document.getElementById('email').value.trim(),
+    tkdSchool:      (document.getElementById('tkdSchool').value === 'other'
+                      ? document.getElementById('tkdSchoolOther').value.trim()
+                      : document.getElementById('tkdSchool').value),
+    gender:         document.getElementById('gender').value,
+    dob:            document.getElementById('dob').value,
+    weight:         document.getElementById('weight').value,
+    height:         document.getElementById('height').value,
+    beltFormNo:     document.getElementById('beltFormNo').value,
+    events:         events,
+    agreedToWaiver: document.getElementById('agreedToWaiver').checked,
+    guardianName:   document.getElementById('guardianName')?.value.trim() || ''
+  };
+
+  google.script.run
+    .withSuccessHandler(res => {
+      if (res.success) {
+        showSuccess(data, res.totalFee);
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration';
+        alert('Error: ' + (res.error || 'Unknown error. Please try again.'));
       }
-    }
+    })
+    .withFailureHandler(err => {
+      btn.disabled = false;
+      btn.textContent = 'Submit Registration';
+      alert('Submission failed: ' + err.message);
+    })
+    .registerCompetitor(data);
+}
 
-    flag('first-name', 'First name is required');
-    flag('last-name',  'Last name is required');
-    flag('dob',        'Date of birth is required');
-    flag('gender',     'Please select a gender');
-    flag('phone',      'Phone number is required');
-    flag('nationality','Nationality is required');
-    flag('club',       'Club name is required');
-    flag('belt',       'Belt grade is required');
-    flag('weight',     'Current weight in kg is required');
+function showSuccess(data, fee) {
+  document.getElementById('reg-form').style.display = 'none';
+  const ss = document.getElementById('success-screen');
+  ss.style.display = 'block';
+  document.getElementById('success-name').textContent =
+    `${data.firstName} ${data.lastName} · ${data.events.join(' · ')}`;
+  document.getElementById('success-fee').textContent = `Total Due: $${fee}`;
 
-    // Email
-    const emailEl = document.getElementById('email');
-    if (!emailEl.value.trim()) {
-      setFieldError(emailEl, 'Email address is required');
-      if (!firstError) firstError = emailEl;
-      valid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
-      setFieldError(emailEl, 'Valid email address required');
-      if (!firstError) firstError = emailEl;
-      valid = false;
-    }
-
-    // At least one event
-    if (!chkKyorugi.checked && !chkPoomsae.checked && !chkTeam.checked) {
-      alert('Please select at least one competition event.');
-      valid = false;
-    }
-
-    // Weight class if kyorugi
-    if (chkKyorugi.checked && !weightClassSel.value) {
-      setFieldError(weightClassSel, 'Weight class is required for Kyorugi');
-      if (!firstError) firstError = weightClassSel;
-      valid = false;
-    }
-
-    // Waiver checkboxes
-    const waiverEl  = document.getElementById('waiver-accept');
-    const medicalEl = document.getElementById('medically-fit');
-    if (!waiverEl.checked) {
-      waiverEl.classList.add('error');
-      if (!firstError) firstError = waiverEl;
-      valid = false;
-    }
-    if (!medicalEl.checked) {
-      medicalEl.classList.add('error');
-      if (!firstError) firstError = medicalEl;
-      valid = false;
-    }
-
-    // Guardian if under-18
-    if (under18Toggle.checked) {
-      const gName  = document.getElementById('guardian-name');
-      const gEmail = document.getElementById('guardian-email');
-      if (!gName.value.trim()) {
-        setFieldError(gName, 'Guardian name is required for under-18 athletes');
-        if (!firstError) firstError = gName;
-        valid = false;
-      }
-      if (!gEmail.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gEmail.value)) {
-        setFieldError(gEmail, 'Valid guardian email is required');
-        if (!firstError) firstError = gEmail;
-        valid = false;
-      }
-    }
-
-    if (firstError) {
-      firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    return valid;
-  }
-
-  // ── GENERATE REF ──
-  function generateRef() {
-    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let ref = 'DC-2026-';
-    for (let i = 0; i < 5; i++) {
-      ref += chars[Math.floor(Math.random() * chars.length)];
-    }
-    return ref;
-  }
-
-  // ── SUBMIT ──
-  document.getElementById('reg-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    if (!validateForm()) return;
-
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'SUBMITTING…';
-
-    setTimeout(function() {
-      const ref   = generateRef();
-      const email = document.getElementById('email').value;
-
-      document.getElementById('success-ref').textContent   = ref;
-      document.getElementById('success-total').textContent = '€' + currentTotal;
-      document.getElementById('success-email').textContent = email;
-
-      document.getElementById('form-body').style.display = 'none';
-      const successEl = document.getElementById('success-screen');
-      successEl.classList.add('visible');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 900);
+  // Mark all steps done
+  [1,2,3].forEach(i => {
+    const el = document.getElementById(`step-ind-${i}`);
+    el.classList.remove('active');
+    el.classList.add('done');
+    el.querySelector('.step-dot').textContent = '✓';
   });
 
-  // ── LIVE INPUT — CLEAR ERRORS ON TYPE ──
-  document.querySelectorAll('input, select').forEach(function(el) {
-    el.addEventListener('input', function() {
-      if (this.classList.contains('error')) {
-        this.classList.remove('error');
-        const wrapper = this.closest('.field');
-        if (wrapper) wrapper.classList.remove('has-error');
-      }
-    });
-  });
-
-  // ── NAV CTA SMOOTH SCROLL ──
-  document.querySelector('.nav-cta').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // Init
-  updateFee();
-
-})();
+  ss.scrollIntoView({ behavior: 'smooth' });
+}
 </script>
 </body>
 </html>
