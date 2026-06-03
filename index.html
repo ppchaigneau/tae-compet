@@ -1,373 +1,1276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dragon Cup Taekwondo Championship 2026</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon Cup 2026 — Official Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0e0e;
+  --panel: #161616;
+  --border: #2a2a2a;
+  --red: #e02b2b;
+  --dark-red: #a81c1c;
+  --gold: #d4a017;
+  --text: #e8e8e8;
+  --muted: #999;
+  --very-muted: #555;
+  --input-bg: #111;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── STICKY NAV ─── */
+#sticky-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 56px;
+  background: rgba(14,14,14,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--red); }
+
+.nav-cta {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: #fff;
+  background: var(--red);
+  border: none;
+  padding: 8px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.nav-cta:hover { background: var(--dark-red); }
+
+/* ─── HERO ─── */
+#hero {
+  position: relative;
+  padding: 140px 32px 72px;
+  border-bottom: 3px solid var(--red);
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(120px, 22vw, 280px);
+  color: var(--red);
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 10vw, 110px);
+  line-height: 0.92;
+  letter-spacing: 4px;
+  color: var(--text);
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 28px;
+}
+#hero h1 span { color: var(--red); }
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.hero-meta-item .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--very-muted);
+  text-transform: uppercase;
+}
+
+.hero-meta-item .value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.hero-meta-sep {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+}
+
+#late-fee-banner {
+  display: none;
+  margin: 28px auto 0;
+  max-width: 480px;
+  background: rgba(212,160,23,0.1);
+  border: 1px solid var(--gold);
+  padding: 10px 20px;
+  position: relative;
+}
+#late-fee-banner.visible { display: block; }
+#late-fee-banner p {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ─── MAIN CONTENT ─── */
+#main-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 20px 80px;
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 24px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.section-label-text {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: var(--text);
+  text-transform: uppercase;
+}
+.section-label-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--very-muted);
+  letter-spacing: 2px;
+  margin-left: auto;
+}
+
+/* ─── CARD ─── */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+/* ─── FORM GRID ─── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-grid .full { grid-column: 1 / -1; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.field select option { background: #1a1a1a; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(224,43,43,0.15);
+}
+
+.field input.error,
+.field select.error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(224,43,43,0.2);
+}
+
+.field .err-msg {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 1px;
+  display: none;
+}
+.field.has-error .err-msg { display: block; }
+
+/* ─── EVENT CARDS ─── */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.event-toggle {
+  position: relative;
+}
+
+.event-toggle input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.event-toggle label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 16px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+  height: 100%;
+}
+
+.event-toggle input:checked + label {
+  border-color: var(--red);
+  background: rgba(224,43,43,0.08);
+}
+
+.event-toggle label:hover {
+  border-color: var(--very-muted);
+}
+
+.event-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.event-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.event-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.event-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--red);
+  margin-top: auto;
+}
+
+.bundle-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  padding: 10px 14px;
+  border: 1px solid rgba(212,160,23,0.25);
+  background: rgba(212,160,23,0.05);
+  margin-bottom: 20px;
+}
+
+/* ─── WEIGHT CLASS ─── */
+#weight-class-row {
+  display: none;
+  margin-top: 4px;
+}
+#weight-class-row.visible { display: flex; }
+
+/* ─── FEE PANEL ─── */
+#fee-panel {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#fee-breakdown {
+  flex: 1;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid var(--border);
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fee-row .fee-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.fee-row .fee-amount {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+}
+
+.fee-row.discount .fee-amount { color: var(--gold); }
+
+.fee-empty {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--very-muted);
+  letter-spacing: 1px;
+}
+
+#fee-total-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 28px;
+  gap: 4px;
+  min-width: 120px;
+}
+
+#fee-total-box .total-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--very-muted);
+  text-transform: uppercase;
+}
+
+#fee-total {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--red);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+/* ─── WAIVER ─── */
+.waiver-box {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  padding: 16px;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-family: var(--font-body);
+}
+
+.waiver-box::-webkit-scrollbar { width: 4px; }
+.waiver-box::-webkit-scrollbar-track { background: transparent; }
+.waiver-box::-webkit-scrollbar-thumb { background: var(--border); }
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.checkbox-field input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  margin-top: 2px;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.checkbox-field input[type="checkbox"]:checked {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.checkbox-field input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px; top: 1px;
+  width: 5px; height: 9px;
+  border: 2px solid #fff;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+}
+
+.checkbox-field input[type="checkbox"].error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(224,43,43,0.2);
+}
+
+.checkbox-field .check-label {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+#guardian-fields {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+#guardian-fields.visible { display: block; }
+#guardian-fields .form-grid { margin-top: 12px; }
+
+/* ─── SUBMIT BUTTON ─── */
+#submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+#submit-btn:hover { background: var(--dark-red); }
+#submit-btn:active { transform: scale(0.99); }
+#submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── SUCCESS SCREEN ─── */
+#success-screen {
+  display: none;
+  text-align: center;
+  padding: 80px 32px;
+  animation: fadeIn 0.4s ease;
+}
+#success-screen.visible { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-check {
+  font-size: 72px;
+  margin-bottom: 24px;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  display: block;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 8vw, 72px);
+  letter-spacing: 6px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.success-sub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.success-details {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.success-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.success-row:last-child { border-bottom: none; }
+
+.success-row-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--very-muted);
+  text-transform: uppercase;
+}
+
+.success-row-value {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+.success-row-value.red { color: var(--red); }
+
+.success-note {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--very-muted);
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 32px 0;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .full { grid-column: 1; }
+  .events-grid { grid-template-columns: 1fr; }
+  #fee-panel { flex-direction: column; }
+  #fee-breakdown { border-right: none; border-bottom: 1px solid var(--border); }
+  #fee-total-box { padding: 16px 20px; flex-direction: row; gap: 12px; }
+  #fee-total { font-size: 36px; }
+  .hero-meta-sep { display: none; }
+  #sticky-nav { padding: 0 16px; }
+  #main-content { padding: 40px 16px 60px; }
+  .card { padding: 20px 16px; }
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <span class="nav-logo">🥋 Dragon Cup 2026</span>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#register" class="btn-nav">Register Now</a></li>
-      </ul>
+<!-- STICKY NAV -->
+<nav id="sticky-nav">
+  <a href="#" class="nav-logo">DRAGON<span>CUP</span></a>
+  <a href="#form-section" class="nav-cta">REGISTER NOW</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-watermark" aria-hidden="true">태권도</div>
+  <p class="hero-eyebrow">DRAGON CUP 2026 · OFFICIAL REGISTRATION</p>
+  <h1>DRAGON CUP <span>CHAMPIONSHIP</span></h1>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">Date</span>
+      <span class="value">October 18–19, 2026</span>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-      <p class="hero-tag">Official Registration Open</p>
-      <h1>Dragon Cup<br/>Taekwondo Championship</h1>
-      <p class="hero-sub">July 19–20, 2026 &nbsp;·&nbsp; Paris Convention Center</p>
-      <div class="hero-actions">
-        <a href="#register" class="btn-primary">Register Now</a>
-        <a href="#schedule" class="btn-outline">View Schedule</a>
-      </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <span class="label">Venue</span>
+      <span class="value">National Sports Arena, Dublin</span>
     </div>
-    <div class="hero-badge">
-      <div class="badge-circle">
-        <span class="badge-num">2026</span>
-        <span class="badge-label">Championship</span>
-      </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <span class="label">Registration Deadline</span>
+      <span class="value">September 30, 2026</span>
     </div>
-  </header>
+  </div>
+  <div id="late-fee-banner">
+    <p>&#9888; Late Registration — Additional €10 fee applies</p>
+  </div>
+</section>
 
-  <!-- STATS -->
-  <section class="stats-bar">
-    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Athletes</span></div>
-    <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Countries</span></div>
-    <div class="stat"><span class="stat-num">12</span><span class="stat-label">Weight Classes</span></div>
-    <div class="stat"><span class="stat-num">€5K</span><span class="stat-label">Prize Pool</span></div>
-  </section>
+<!-- MAIN FORM -->
+<div id="main-content">
+  <form id="reg-form" novalidate>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About the Tournament</h2>
-      <p class="section-text">
-        The Dragon Cup is an open international Taekwondo competition welcoming athletes of all belt levels,
-        from white belt beginners to black belt masters. Sanctioned by the World Taekwondo Federation,
-        this two-day event features Kyorugi (sparring) and Poomsae (forms) divisions across all age groups.
-      </p>
-      <div class="info-cards">
-        <div class="info-card">
-          <div class="info-icon">📍</div>
-          <h3>Venue</h3>
-          <p>Paris Convention Center<br/>Hall B, 75015 Paris</p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">📅</div>
-          <h3>Dates</h3>
-          <p>July 19 (Poomsae)<br/>July 20 (Kyorugi)</p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">⏰</div>
-          <h3>Registration Closes</h3>
-          <p>June 30, 2026<br/>23:59 CET</p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">💶</div>
-          <h3>Entry Fee</h3>
-          <p>€40 per division<br/>€65 for both</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCHEDULE -->
-  <section id="schedule" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Event Schedule</h2>
-      <div class="schedule-grid">
-        <div class="schedule-day">
-          <div class="day-header">Day 1 — July 19</div>
-          <ul class="schedule-list">
-            <li><span class="time">08:00</span> Doors open &amp; weigh-in</li>
-            <li><span class="time">09:00</span> Opening ceremony</li>
-            <li><span class="time">09:30</span> Poomsae – Juniors (Under 14)</li>
-            <li><span class="time">11:00</span> Poomsae – Cadets (14–17)</li>
-            <li><span class="time">13:00</span> Lunch break</li>
-            <li><span class="time">14:00</span> Poomsae – Adults (18+)</li>
-            <li><span class="time">17:00</span> Poomsae medal ceremony</li>
-            <li><span class="time">18:00</span> End of day 1</li>
-          </ul>
-        </div>
-        <div class="schedule-day">
-          <div class="day-header">Day 2 — July 20</div>
-          <ul class="schedule-list">
-            <li><span class="time">08:00</span> Doors open &amp; weigh-in</li>
-            <li><span class="time">09:00</span> Kyorugi – Junior divisions</li>
-            <li><span class="time">11:30</span> Kyorugi – Cadet divisions</li>
-            <li><span class="time">13:00</span> Lunch break</li>
-            <li><span class="time">14:00</span> Kyorugi – Adult divisions</li>
-            <li><span class="time">16:30</span> Semi-finals &amp; finals</li>
-            <li><span class="time">18:00</span> Closing ceremony</li>
-            <li><span class="time">18:30</span> End of tournament</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
-  <section id="categories" class="section">
-    <div class="container">
-      <h2 class="section-title">Weight &amp; Age Categories</h2>
-      <div class="cat-tabs">
-        <button class="cat-tab active" data-tab="junior">Junior (Under 14)</button>
-        <button class="cat-tab" data-tab="cadet">Cadet (14–17)</button>
-        <button class="cat-tab" data-tab="adult">Adult (18+)</button>
-      </div>
-      <div id="junior" class="cat-content active">
-        <table class="cat-table">
-          <thead><tr><th>Division</th><th>Weight</th><th>Gender</th></tr></thead>
-          <tbody>
-            <tr><td>Fin</td><td>Under 33 kg</td><td>Male / Female</td></tr>
-            <tr><td>Fly</td><td>33–37 kg</td><td>Male / Female</td></tr>
-            <tr><td>Bantam</td><td>37–41 kg</td><td>Male / Female</td></tr>
-            <tr><td>Feather</td><td>41–45 kg</td><td>Male / Female</td></tr>
-            <tr><td>Light</td><td>45–49 kg</td><td>Male / Female</td></tr>
-            <tr><td>Heavy</td><td>Over 49 kg</td><td>Male / Female</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="cadet" class="cat-content">
-        <table class="cat-table">
-          <thead><tr><th>Division</th><th>Weight</th><th>Gender</th></tr></thead>
-          <tbody>
-            <tr><td>Fin</td><td>Under 45 kg</td><td>Male / Female</td></tr>
-            <tr><td>Fly</td><td>45–51 kg</td><td>Male / Female</td></tr>
-            <tr><td>Bantam</td><td>51–55 kg</td><td>Male / Female</td></tr>
-            <tr><td>Feather</td><td>55–59 kg</td><td>Male / Female</td></tr>
-            <tr><td>Light</td><td>59–63 kg</td><td>Male / Female</td></tr>
-            <tr><td>Heavy</td><td>Over 63 kg</td><td>Male / Female</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="adult" class="cat-content">
-        <table class="cat-table">
-          <thead><tr><th>Division</th><th>Weight</th><th>Gender</th></tr></thead>
-          <tbody>
-            <tr><td>Fin</td><td>Under 54 kg</td><td>Male / Female</td></tr>
-            <tr><td>Fly</td><td>54–58 kg</td><td>Male / Female</td></tr>
-            <tr><td>Bantam</td><td>58–63 kg</td><td>Male / Female</td></tr>
-            <tr><td>Feather</td><td>63–68 kg</td><td>Male / Female</td></tr>
-            <tr><td>Light</td><td>68–74 kg</td><td>Male / Female</td></tr>
-            <tr><td>Welter</td><td>74–80 kg</td><td>Male / Female</td></tr>
-            <tr><td>Middle</td><td>80–87 kg</td><td>Male / Female</td></tr>
-            <tr><td>Heavy</td><td>Over 87 kg</td><td>Male / Female</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGISTRATION FORM -->
-  <section id="register" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Registration Form</h2>
-      <p class="section-text">Complete the form below to register for the Dragon Cup 2026. All fields are required unless marked optional.</p>
-      <form id="regForm" class="reg-form" novalidate>
-
-        <fieldset>
-          <legend>Personal Information</legend>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Jean" required />
-              <span class="error-msg"></span>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Dupont" required />
-              <span class="error-msg"></span>
-            </div>
+    <!-- SUCCESS SCREEN -->
+    <div id="success-screen">
+      <span class="success-check">&#9989;</span>
+      <div class="success-title">REGISTRATION RECEIVED</div>
+      <p class="success-sub">Your entry has been confirmed</p>
+      <div style="display:flex; justify-content:center;">
+        <div class="success-details">
+          <div class="success-row">
+            <span class="success-row-label">Reference</span>
+            <span class="success-row-value" id="success-ref">—</span>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="dob">Date of Birth *</label>
-              <input type="date" id="dob" name="dob" required />
-              <span class="error-msg"></span>
+          <div class="success-row">
+            <span class="success-row-label">Total Fee</span>
+            <span class="success-row-value red" id="success-total">—</span>
+          </div>
+          <div class="success-row">
+            <span class="success-row-label">Email</span>
+            <span class="success-row-value" id="success-email" style="font-size:14px; font-family:var(--font-body);">—</span>
+          </div>
+        </div>
+      </div>
+      <p class="success-note">A confirmation email has been sent to your registered address. Please check your spam folder if you do not receive it within 10 minutes.</p>
+    </div>
+
+    <!-- FORM BODY -->
+    <div id="form-body">
+
+      <!-- SECTION 1: COMPETITOR INFO -->
+      <div id="form-section">
+        <div class="section-label">
+          <span class="section-label-text">Competitor Info</span>
+          <span class="section-label-num">01 / 03</span>
+        </div>
+        <div class="card">
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="firstName" placeholder="John" autocomplete="given-name">
+              <span class="err-msg">First name is required</span>
             </div>
-            <div class="form-group">
-              <label for="gender">Gender *</label>
-              <select id="gender" name="gender" required>
+
+            <div class="field">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="lastName" placeholder="Smith" autocomplete="family-name">
+              <span class="err-msg">Last name is required</span>
+            </div>
+
+            <div class="field">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob">
+              <span class="err-msg">Date of birth is required</span>
+            </div>
+
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
                 <option value="">Select…</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
               </select>
-              <span class="error-msg"></span>
+              <span class="err-msg">Please select a gender</span>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="jean@example.com" required />
-              <span class="error-msg"></span>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" required />
-              <span class="error-msg"></span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group full">
-              <label for="nationality">Nationality *</label>
-              <input type="text" id="nationality" name="nationality" placeholder="French" required />
-              <span class="error-msg"></span>
-            </div>
-          </div>
-        </fieldset>
 
-        <fieldset>
-          <legend>Club &amp; Belt Information</legend>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="club">Club / Dojang Name *</label>
-              <input type="text" id="club" name="club" placeholder="Dragon Dojang Paris" required />
-              <span class="error-msg"></span>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email">
+              <span class="err-msg">Valid email address required</span>
             </div>
-            <div class="form-group">
-              <label for="coach">Coach / Instructor Name *</label>
-              <input type="text" id="coach" name="coach" placeholder="Master Kim" required />
-              <span class="error-msg"></span>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+353 87 123 4567" autocomplete="tel">
+              <span class="err-msg">Phone number is required</span>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="belt">Belt Grade *</label>
-              <select id="belt" name="belt" required>
-                <option value="">Select…</option>
-                <optgroup label="Color Belts">
-                  <option value="white">White</option>
-                  <option value="yellow">Yellow</option>
-                  <option value="orange">Orange</option>
-                  <option value="green">Green</option>
-                  <option value="blue">Blue</option>
-                  <option value="red">Red</option>
-                  <option value="brown">Brown</option>
+
+            <div class="field">
+              <label for="nationality">Nationality</label>
+              <input type="text" id="nationality" name="nationality" placeholder="Irish">
+              <span class="err-msg">Nationality is required</span>
+            </div>
+
+            <div class="field">
+              <label for="club">Club Name</label>
+              <input type="text" id="club" name="club" placeholder="Dragon TKD Club">
+              <span class="err-msg">Club name is required</span>
+            </div>
+
+            <div class="field">
+              <label for="coach">Coach Name</label>
+              <input type="text" id="coach" name="coach" placeholder="Master Kim">
+              <span class="err-msg"></span>
+            </div>
+
+            <div class="field">
+              <label for="belt">Belt Grade</label>
+              <select id="belt" name="belt">
+                <option value="">Select belt…</option>
+                <optgroup label="Colour Belts">
+                  <option>White Belt (10th Gup)</option>
+                  <option>Yellow Belt (9th Gup)</option>
+                  <option>Orange Belt (8th Gup)</option>
+                  <option>Green Belt (7th Gup)</option>
+                  <option>Blue Belt (6th Gup)</option>
+                  <option>Blue Stripe (5th Gup)</option>
+                  <option>Red Belt (4th Gup)</option>
+                  <option>Red Stripe (3rd Gup)</option>
+                  <option>Brown Belt (2nd Gup)</option>
+                  <option>Brown Stripe (1st Gup)</option>
                 </optgroup>
                 <optgroup label="Black Belts">
-                  <option value="1dan">1st Dan</option>
-                  <option value="2dan">2nd Dan</option>
-                  <option value="3dan">3rd Dan</option>
-                  <option value="4dan+">4th Dan and above</option>
+                  <option>1st Dan Black Belt</option>
+                  <option>2nd Dan Black Belt</option>
+                  <option>3rd Dan Black Belt</option>
+                  <option>4th Dan Black Belt</option>
+                  <option>5th Dan + Black Belt</option>
                 </optgroup>
               </select>
-              <span class="error-msg"></span>
+              <span class="err-msg">Belt grade is required</span>
             </div>
-            <div class="form-group">
-              <label for="weight">Current Weight (kg) *</label>
-              <input type="number" id="weight" name="weight" min="20" max="200" step="0.1" placeholder="65.5" required />
-              <span class="error-msg"></span>
-            </div>
-          </div>
-        </fieldset>
 
-        <fieldset>
-          <legend>Competition Divisions</legend>
-          <p class="fieldset-note">Select the event(s) you wish to enter.</p>
-          <div class="form-row">
-            <div class="form-group full">
-              <label>Events *</label>
-              <div class="checkbox-group">
-                <label class="checkbox-label">
-                  <input type="checkbox" name="events" value="kyorugi" />
-                  <span>Kyorugi (Sparring) — €40</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" name="events" value="poomsae" />
-                  <span>Poomsae (Forms) — €40</span>
-                </label>
-              </div>
-              <span class="error-msg" id="eventsError"></span>
+            <div class="field full">
+              <label for="weight">Current Weight (kg)</label>
+              <input type="number" id="weight" name="weight" placeholder="68" min="20" max="200" step="0.1">
+              <span class="err-msg">Current weight in kg is required</span>
             </div>
-          </div>
-          <div class="form-row" id="weightClassRow" style="display:none">
-            <div class="form-group full">
-              <label for="weightClass">Weight Class (Kyorugi) *</label>
-              <select id="weightClass" name="weightClass">
-                <option value="">Select weight class…</option>
-                <option value="fin">Fin</option>
-                <option value="fly">Fly</option>
-                <option value="bantam">Bantam</option>
-                <option value="feather">Feather</option>
-                <option value="light">Light</option>
-                <option value="welter">Welter</option>
-                <option value="middle">Middle</option>
-                <option value="heavy">Heavy</option>
-              </select>
-              <span class="error-msg"></span>
-            </div>
-          </div>
-        </fieldset>
 
-        <fieldset>
-          <legend>Medical &amp; Consent</legend>
-          <div class="form-row">
-            <div class="form-group full">
-              <label for="medical">Medical Conditions / Injuries (optional)</label>
-              <textarea id="medical" name="medical" rows="3" placeholder="List any relevant medical conditions or injuries organizers should be aware of…"></textarea>
-            </div>
           </div>
-          <div class="form-row">
-            <div class="form-group full">
-              <label class="checkbox-label">
-                <input type="checkbox" id="consent" name="consent" required />
-                <span>I confirm that I am medically fit to compete and I accept the tournament rules and liability waiver. *</span>
-              </label>
-              <span class="error-msg" id="consentError"></span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group full">
-              <label class="checkbox-label">
-                <input type="checkbox" id="photoConsent" name="photoConsent" />
-                <span>I consent to photos/videos taken at the event being used for promotional purposes. (optional)</span>
-              </label>
-            </div>
-          </div>
-        </fieldset>
+        </div>
+      </div>
 
-        <!-- Fee summary -->
-        <div class="fee-summary" id="feeSummary" style="display:none">
-          <h3>Registration Fee Summary</h3>
-          <div id="feeBreakdown"></div>
-          <div class="fee-total" id="feeTotal"></div>
+      <div class="section-divider"></div>
+
+      <!-- SECTION 2: COMPETITION EVENTS -->
+      <div class="section-label">
+        <span class="section-label-text">Competition Events</span>
+        <span class="section-label-num">02 / 03</span>
+      </div>
+      <div class="card">
+
+        <div class="events-grid">
+
+          <div class="event-toggle">
+            <input type="checkbox" id="evt-kyorugi" name="events" value="kyorugi">
+            <label for="evt-kyorugi">
+              <span class="event-icon">&#x1F94B;</span>
+              <span class="event-name">KYORUGI</span>
+              <span class="event-sub">Sparring</span>
+              <span class="event-price">€40</span>
+            </label>
+          </div>
+
+          <div class="event-toggle">
+            <input type="checkbox" id="evt-poomsae" name="events" value="poomsae">
+            <label for="evt-poomsae">
+              <span class="event-icon">&#x1F3C6;</span>
+              <span class="event-name">POOMSAE</span>
+              <span class="event-sub">Forms</span>
+              <span class="event-price">€40</span>
+            </label>
+          </div>
+
+          <div class="event-toggle">
+            <input type="checkbox" id="evt-team" name="events" value="team">
+            <label for="evt-team">
+              <span class="event-icon">&#x1F3AF;</span>
+              <span class="event-name">TEAM POOMSAE</span>
+              <span class="event-sub">Team Forms</span>
+              <span class="event-price">€25</span>
+            </label>
+          </div>
+
         </div>
 
-        <button type="submit" class="btn-submit">Submit Registration</button>
-      </form>
+        <div class="bundle-note">
+          &#x1F4A1; Bundle deal: Kyorugi + Poomsae together = <strong>€65</strong> (save €15)
+        </div>
 
-      <!-- Success message -->
-      <div id="successMsg" class="success-msg" style="display:none">
-        <div class="success-icon">✅</div>
-        <h3>Registration Received!</h3>
-        <p>Thank you! Your registration has been submitted. You will receive a confirmation email within 24 hours at the address provided.</p>
-        <p>Your reference number: <strong id="refNumber"></strong></p>
-        <button class="btn-primary" onclick="resetForm()">Register Another Athlete</button>
+        <!-- Weight class (shown when Kyorugi selected) -->
+        <div id="weight-class-row" class="field">
+          <label for="weight-class">Weight Class</label>
+          <select id="weight-class" name="weightClass">
+            <option value="">Select weight class…</option>
+          </select>
+          <span class="err-msg">Weight class is required for Kyorugi</span>
+        </div>
+
+        <!-- Fee panel -->
+        <div id="fee-panel">
+          <div id="fee-breakdown">
+            <p class="fee-empty" id="fee-empty-msg">No events selected</p>
+          </div>
+          <div id="fee-total-box">
+            <span class="total-label">Total</span>
+            <span id="fee-total">€0</span>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>🥋 Dragon Cup Taekwondo Championship 2026</p>
-      <p>For questions: <a href="mailto:info@dragoncup2026.com">info@dragoncup2026.com</a></p>
-      <p class="footer-small">Sanctioned by the World Taekwondo Federation &nbsp;·&nbsp; All rights reserved</p>
-    </div>
-  </footer>
+      <div class="section-divider"></div>
 
-  <script src="app.js"></script>
+      <!-- SECTION 3: MEDICAL & WAIVER -->
+      <div class="section-label">
+        <span class="section-label-text">Medical &amp; Waiver</span>
+        <span class="section-label-num">03 / 03</span>
+      </div>
+      <div class="card">
+
+        <div class="waiver-box">
+          <strong>LIABILITY WAIVER AND RELEASE OF CLAIMS</strong><br><br>
+          By registering for Dragon Cup Championship 2026 ("the Event"), the participant (or parent/guardian if under 18) acknowledges and agrees to the following terms and conditions:<br><br>
+          <strong>1. Assumption of Risk.</strong> Participation in martial arts competitions involves inherent risks of physical injury, including but not limited to bruising, sprains, fractures, and in rare cases, more serious injuries. The participant voluntarily accepts all such risks.<br><br>
+          <strong>2. Medical Fitness.</strong> The participant declares that they are in good physical condition and medically fit to compete. Any pre-existing medical conditions have been disclosed to their coach and treating physician.<br><br>
+          <strong>3. Release of Liability.</strong> The participant releases, waives, discharges, and holds harmless Dragon Cup Championship, its organisers, officials, volunteers, sponsors, and venue owners from any and all liability, claims, demands, or causes of action arising out of or in connection with participation in the Event, including but not limited to those caused by negligence.<br><br>
+          <strong>4. Media Consent.</strong> The participant grants permission for photographs and video recordings taken during the Event to be used for promotional purposes by the organisers without compensation.<br><br>
+          <strong>5. Rules Compliance.</strong> The participant agrees to abide by the rules and regulations of World Taekwondo (WT) and the Dragon Cup Championship, including any decisions made by referees and officials, which shall be final.<br><br>
+          <strong>6. Data Protection.</strong> Personal data collected during registration will be processed in accordance with applicable data protection law (GDPR) and used solely for the administration of the Event.
+        </div>
+
+        <label class="checkbox-field">
+          <input type="checkbox" id="waiver-accept" name="waiverAccept">
+          <span class="check-label">I have read and fully accept the liability waiver and release of claims above</span>
+        </label>
+
+        <label class="checkbox-field">
+          <input type="checkbox" id="medically-fit" name="medicallyFit">
+          <span class="check-label">I confirm that the athlete is in good physical health and medically fit to compete</span>
+        </label>
+
+        <!-- Under-18 toggle -->
+        <label class="checkbox-field" style="margin-top: 8px;">
+          <input type="checkbox" id="under18-toggle" name="under18">
+          <span class="check-label">Athlete is under 18 years of age — Guardian consent required</span>
+        </label>
+
+        <div id="guardian-fields">
+          <div class="section-label" style="margin-bottom: 12px;">
+            <span class="section-label-text" style="font-size: 14px;">Guardian Details</span>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="guardian-name">Guardian Full Name</label>
+              <input type="text" id="guardian-name" name="guardianName" placeholder="Jane Smith">
+              <span class="err-msg">Guardian name is required for under-18 athletes</span>
+            </div>
+            <div class="field">
+              <label for="guardian-email">Guardian Email</label>
+              <input type="email" id="guardian-email" name="guardianEmail" placeholder="parent@example.com">
+              <span class="err-msg">Valid guardian email is required</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SUBMIT -->
+      <button type="submit" id="submit-btn">SUBMIT REGISTRATION</button>
+
+    </div><!-- /form-body -->
+  </form>
+</div>
+
+<script>
+(function() {
+
+  // ── LATE FEE BANNER ──
+  const lateFeeDate = new Date('2026-09-15');
+  if (new Date() > lateFeeDate) {
+    document.getElementById('late-fee-banner').classList.add('visible');
+  }
+
+  // ── EVENT PRICING ──
+  const EVENT_PRICES = { kyorugi: 40, poomsae: 40, team: 25 };
+  const BUNDLE_DISCOUNT = 15;
+
+  const chkKyorugi    = document.getElementById('evt-kyorugi');
+  const chkPoomsae    = document.getElementById('evt-poomsae');
+  const chkTeam       = document.getElementById('evt-team');
+  const weightClassRow = document.getElementById('weight-class-row');
+  const weightClassSel = document.getElementById('weight-class');
+  const feeBreakdown  = document.getElementById('fee-breakdown');
+  const feeTotalEl    = document.getElementById('fee-total');
+  let currentTotal    = 0;
+
+  function getAge() {
+    const dob = document.getElementById('dob').value;
+    if (!dob) return null;
+    const diff = Date.now() - new Date(dob).getTime();
+    return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+  }
+
+  function updateWeightClasses() {
+    const age = getAge();
+    weightClassSel.innerHTML = '';
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Select weight class…';
+    weightClassSel.appendChild(placeholder);
+
+    let classes = [];
+    if (age !== null && age < 12) {
+      classes = ['Under 25kg','25–30kg','30–35kg','35–40kg','40–45kg','45+kg'];
+    } else if (age !== null && age < 15) {
+      classes = ['Under 33kg','33–37kg','37–41kg','41–45kg','45–49kg','49–53kg','53–57kg','57–61kg','61–65kg','65+kg'];
+    } else if (age !== null && age < 18) {
+      classes = ['Under 45kg','45–48kg','48–51kg','51–55kg','55–59kg','59–63kg','63–68kg','68–73kg','73–78kg','78+kg'];
+    } else {
+      classes = ['Under 54kg','54–58kg','58–63kg','63–68kg','68–74kg','74–80kg','80–87kg','87+kg'];
+    }
+
+    classes.forEach(function(cls) {
+      const opt = document.createElement('option');
+      opt.value = cls;
+      opt.textContent = cls;
+      weightClassSel.appendChild(opt);
+    });
+  }
+
+  function updateFee() {
+    const kyorugi = chkKyorugi.checked;
+    const poomsae = chkPoomsae.checked;
+    const team    = chkTeam.checked;
+    const bundle  = kyorugi && poomsae;
+
+    const rows = [];
+    let total = 0;
+
+    if (kyorugi) {
+      rows.push({ label: 'Kyorugi (Sparring)', amount: EVENT_PRICES.kyorugi, discount: false });
+      total += EVENT_PRICES.kyorugi;
+    }
+    if (poomsae) {
+      rows.push({ label: 'Poomsae (Forms)', amount: EVENT_PRICES.poomsae, discount: false });
+      total += EVENT_PRICES.poomsae;
+    }
+    if (bundle) {
+      rows.push({ label: 'Bundle Discount', amount: BUNDLE_DISCOUNT, discount: true });
+      total -= BUNDLE_DISCOUNT;
+    }
+    if (team) {
+      rows.push({ label: 'Team Poomsae', amount: EVENT_PRICES.team, discount: false });
+      total += EVENT_PRICES.team;
+    }
+
+    currentTotal = total;
+
+    // Weight class visibility
+    if (kyorugi) {
+      weightClassRow.classList.add('visible');
+      updateWeightClasses();
+    } else {
+      weightClassRow.classList.remove('visible');
+    }
+
+    // Render breakdown
+    feeBreakdown.innerHTML = '';
+    if (rows.length === 0) {
+      const p = document.createElement('p');
+      p.className = 'fee-empty';
+      p.textContent = 'No events selected';
+      feeBreakdown.appendChild(p);
+    } else {
+      rows.forEach(function(r) {
+        const div = document.createElement('div');
+        div.className = 'fee-row' + (r.discount ? ' discount' : '');
+        const lbl = document.createElement('span');
+        lbl.className = 'fee-label';
+        lbl.textContent = r.label;
+        const amt = document.createElement('span');
+        amt.className = 'fee-amount';
+        amt.textContent = (r.discount ? '−' : '') + '€' + r.amount;
+        div.appendChild(lbl);
+        div.appendChild(amt);
+        feeBreakdown.appendChild(div);
+      });
+    }
+
+    feeTotalEl.textContent = '€' + total;
+  }
+
+  [chkKyorugi, chkPoomsae, chkTeam].forEach(function(c) {
+    c.addEventListener('change', updateFee);
+  });
+  document.getElementById('dob').addEventListener('change', function() {
+    updateFee();
+    checkUnder18Auto();
+  });
+  document.getElementById('weight').addEventListener('input', updateFee);
+
+  // ── UNDER-18 TOGGLE ──
+  const under18Toggle  = document.getElementById('under18-toggle');
+  const guardianFields = document.getElementById('guardian-fields');
+
+  function checkUnder18Auto() {
+    const age = getAge();
+    if (age !== null && age < 18) {
+      under18Toggle.checked = true;
+      guardianFields.classList.add('visible');
+    }
+  }
+
+  under18Toggle.addEventListener('change', function() {
+    guardianFields.classList.toggle('visible', this.checked);
+  });
+
+  // ── VALIDATION HELPERS ──
+  function setFieldError(fieldEl, msg) {
+    const wrapper = fieldEl.closest('.field');
+    if (!wrapper) return;
+    wrapper.classList.add('has-error');
+    fieldEl.classList.add('error');
+    const errEl = wrapper.querySelector('.err-msg');
+    if (errEl && msg) errEl.textContent = msg;
+  }
+
+  function clearAllErrors() {
+    document.querySelectorAll('.has-error').forEach(function(el) {
+      el.classList.remove('has-error');
+    });
+    document.querySelectorAll('.error').forEach(function(el) {
+      el.classList.remove('error');
+    });
+  }
+
+  function validateForm() {
+    clearAllErrors();
+    let valid = true;
+    let firstError = null;
+
+    function flag(id, msg) {
+      const el = document.getElementById(id);
+      if (!el.value || !el.value.trim()) {
+        setFieldError(el, msg);
+        if (!firstError) firstError = el;
+        valid = false;
+      }
+    }
+
+    flag('first-name', 'First name is required');
+    flag('last-name',  'Last name is required');
+    flag('dob',        'Date of birth is required');
+    flag('gender',     'Please select a gender');
+    flag('phone',      'Phone number is required');
+    flag('nationality','Nationality is required');
+    flag('club',       'Club name is required');
+    flag('belt',       'Belt grade is required');
+    flag('weight',     'Current weight in kg is required');
+
+    // Email
+    const emailEl = document.getElementById('email');
+    if (!emailEl.value.trim()) {
+      setFieldError(emailEl, 'Email address is required');
+      if (!firstError) firstError = emailEl;
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+      setFieldError(emailEl, 'Valid email address required');
+      if (!firstError) firstError = emailEl;
+      valid = false;
+    }
+
+    // At least one event
+    if (!chkKyorugi.checked && !chkPoomsae.checked && !chkTeam.checked) {
+      alert('Please select at least one competition event.');
+      valid = false;
+    }
+
+    // Weight class if kyorugi
+    if (chkKyorugi.checked && !weightClassSel.value) {
+      setFieldError(weightClassSel, 'Weight class is required for Kyorugi');
+      if (!firstError) firstError = weightClassSel;
+      valid = false;
+    }
+
+    // Waiver checkboxes
+    const waiverEl  = document.getElementById('waiver-accept');
+    const medicalEl = document.getElementById('medically-fit');
+    if (!waiverEl.checked) {
+      waiverEl.classList.add('error');
+      if (!firstError) firstError = waiverEl;
+      valid = false;
+    }
+    if (!medicalEl.checked) {
+      medicalEl.classList.add('error');
+      if (!firstError) firstError = medicalEl;
+      valid = false;
+    }
+
+    // Guardian if under-18
+    if (under18Toggle.checked) {
+      const gName  = document.getElementById('guardian-name');
+      const gEmail = document.getElementById('guardian-email');
+      if (!gName.value.trim()) {
+        setFieldError(gName, 'Guardian name is required for under-18 athletes');
+        if (!firstError) firstError = gName;
+        valid = false;
+      }
+      if (!gEmail.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gEmail.value)) {
+        setFieldError(gEmail, 'Valid guardian email is required');
+        if (!firstError) firstError = gEmail;
+        valid = false;
+      }
+    }
+
+    if (firstError) {
+      firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    return valid;
+  }
+
+  // ── GENERATE REF ──
+  function generateRef() {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let ref = 'DC-2026-';
+    for (let i = 0; i < 5; i++) {
+      ref += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return ref;
+  }
+
+  // ── SUBMIT ──
+  document.getElementById('reg-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'SUBMITTING…';
+
+    setTimeout(function() {
+      const ref   = generateRef();
+      const email = document.getElementById('email').value;
+
+      document.getElementById('success-ref').textContent   = ref;
+      document.getElementById('success-total').textContent = '€' + currentTotal;
+      document.getElementById('success-email').textContent = email;
+
+      document.getElementById('form-body').style.display = 'none';
+      const successEl = document.getElementById('success-screen');
+      successEl.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 900);
+  });
+
+  // ── LIVE INPUT — CLEAR ERRORS ON TYPE ──
+  document.querySelectorAll('input, select').forEach(function(el) {
+    el.addEventListener('input', function() {
+      if (this.classList.contains('error')) {
+        this.classList.remove('error');
+        const wrapper = this.closest('.field');
+        if (wrapper) wrapper.classList.remove('has-error');
+      }
+    });
+  });
+
+  // ── NAV CTA SMOOTH SCROLL ──
+  document.querySelector('.nav-cta').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Init
+  updateFee();
+
+})();
+</script>
 </body>
 </html>
